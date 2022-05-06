@@ -1,3 +1,9 @@
+<?php
+// redirect 
+header("location: kontrol-1.php", true, 301);
+exit();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
