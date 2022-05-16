@@ -410,13 +410,60 @@
         font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
       }
 
-      .card{
-        font-family: "Quantico","Fjalla One", sans-serif;        
+      .btn-group button {
+        font-size: 13px;
+      } 
+
+      .card button.status-on-off {
+        font-size: 13px;
+      }
+
+      .card button.status-on-off:hover {
+          cursor: default;
+      }
+
+      .input-group span {
+          display: none;
+      }
+
+      .input-group input {
+          font-size: 14px;
+      }
+
+      .card {
+        font-family: "Quantico","Fjalla One", sans-serif;     
+        font-size: 14px;   
       }
 
       .footer, nav {
         font-family: "Quantico", "Fjalla One", sans-serif;        
       }
+
+      @media (min-width: 768px) { 
+      .card {
+        font-size: 18px;   
+      }
+
+      .input-group input {
+          font-size: 18px;
+      }
+
+      .input-group span {
+          display: block;
+      }
+
+      .btn-group button {
+        font-size: 18px;
+      } 
+
+      .card button.status-on-off {
+        font-size: 18px;
+      }
+
+      button {
+        font-size: 18px;
+      }
+     }
     </style>
 
     <title>Hidroponik Smart System - PT. LGAP</title>
@@ -428,7 +475,6 @@
 <?php include 'temp/navbar.php'; ?>
 
 
-
 <!-- content start -->
     <div class="container" style="text-align: center; margin-top: 100px;">    
         <!-- content kontrol manual start -->
@@ -437,119 +483,168 @@
             KONTROL MANUAL <?=$ketLantai;?>
             </div>
             <div class="card-body">
-            <form action="" method="post">
-                <table class="table">
-                    <thead>
-                        
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>#</th>
-                            <th>Saklar</th>								  		
-                            <th>Status</th>
-                            <th>#</th>								  		
-                            <th>Saklar</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                        <th scope="col">Lamp 1</th>
-                        <td scope="col">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button name="alat1off" type="submit" class="<?=cek_tbl_off($arrStatus[0]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                <button name="alat1on" type="submit" class="<?=cek_tbl_on($arrStatus[0]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>				 	
+                <form action="" method="post">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4">TOWER I</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Saklar</th>								  		
+                                            <th>Status</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Lamp 1</th>
+                                            <td scope="col">
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <button name="alat1off" type="submit" class="<?=cek_tbl_off($arrStatus[0]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat1on" type="submit" class="<?=cek_tbl_on($arrStatus[0]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>				 	
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="alat1id" value="<?=$arrStatus[0]['id'];?>">	
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[0]['status']);?></button>
+                                            </td>                                
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fan 1</th>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <button name="alat3off" type="submit" class="<?=cek_tbl_off($arrStatus[1]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat3on" type="submit" class="<?=cek_tbl_on($arrStatus[1]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		  
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="alat3id" value="<?=$arrStatus[1]['id'];?>">
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[1]['status']);?></button>
+                                            </td>                                    
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Pomp 1</th>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <button name="alat5off" type="submit" class="<?=cek_tbl_off($arrStatus[2]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat5on" type="submit" class="<?=cek_tbl_on($arrStatus[2]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                                                </div>
+                                            </td>
+                                            <td>								     
+                                                <input type="hidden" name="alat5id" value="<?=$arrStatus[2]['id'];?>"> 	
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[2]['status']);?></button>			  
+                                            </td>                                    
+                                        </tr>                                        
+                                    </tbody>
+                                </table>
                             </div>
-                        </td>
-                        <td>
-                            <input type="hidden" name="alat1id" value="<?=$arrStatus[0]['id'];?>">	
-                            <button type="button" class="btn btn-primary"><?=cek_status($arrStatus[0]['status']);?></button>
-                        </td>
-                        <th scope="col">Lamp 2</th>
-                        <td scope="col">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button name="alat2off" type="submit" class="<?=cek_tbl_off($arrStatus[4]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                <button name="alat2on" type="submit" class="<?=cek_tbl_on($arrStatus[4]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                            <div class="col">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4">TOWER II</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>                                        
+                                            <th>#</th>								  		
+                                            <th>Saklar</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        <tr>                                                                        
+                                            <th scope="col">Lamp 2</th>
+                                            <td scope="col">
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <button name="alat2off" type="submit" class="<?=cek_tbl_off($arrStatus[4]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat2on" type="submit" class="<?=cek_tbl_on($arrStatus[4]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                                                </div>
+                                            </td>
+                                            <td>	
+                                                <input type="hidden" name="alat2id" value="<?=$arrStatus[4]['id'];?>">	
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[4]['status']);?></button>		  
+                                            </td>
+                                        </tr>
+                                        <tr>                                    
+                                            <th>Fan 2</th>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <button name="alat4off" type="submit" class="<?=cek_tbl_off($arrStatus[5]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat4on" type="submit" class="<?=cek_tbl_on($arrStatus[5]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="alat4id" value="<?=$arrStatus[5]['id'];?>">
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[5]['status']);?></button>			  
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Pomp 2</th>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <button name="alat6off" type="submit" class="<?=cek_tbl_off($arrStatus[6]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat6on" type="submit" class="<?=cek_tbl_on($arrStatus[6]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>	
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="alat6id" value="<?=$arrStatus[6]['id'];?>">
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[6]['status']);?></button>		  
+                                            </td>
+                                        </tr>                                        
+                                    </tbody>
+                                </table>
+                            </div>                        
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="col-lg-6">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="4">TOWER SEMAI</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>                                        
+                                                <th>#</th>								  		
+                                                <th>Saklar</th>
+                                                <th>Status</th>
+                                            </tr>  
+                                            <tr>
+                                                <th scope="row">Lampu Semai</th>
+                                                <td>
+                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                        <button name="alat7off" type="submit" class="<?=cek_tbl_off($arrStatus[3]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                        <button name="alat7on" type="submit" class="<?=cek_tbl_on($arrStatus[3]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <input type="hidden" name="alat7id" value="<?=$arrStatus[3]['id'];?>">
+                                                    <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[3]['status']);?></button>	  
+                                                </td>                                    
+                                            </tr>                                      
+                                            <tr>
+                                                <th>Kipas Semai</th>
+                                                <td>
+                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                        <button name="alat8off" type="submit" class="<?=cek_tbl_off($arrStatus[7]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                        <button name="alat8on" type="submit" class="<?=cek_tbl_on($arrStatus[7]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		 
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <input type="hidden" name="alat8id" value="<?=$arrStatus[7]['id'];?>">
+                                                    <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[7]['status']);?></button>		 
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </td>
-                        <td>	
-                            <input type="hidden" name="alat2id" value="<?=$arrStatus[4]['id'];?>">	
-                                    <button type="button" class="btn btn-primary"><?=cek_status($arrStatus[4]['status']);?></button>		  
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">Fan 1</th>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button name="alat3off" type="submit" class="<?=cek_tbl_off($arrStatus[1]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                <button name="alat3on" type="submit" class="<?=cek_tbl_on($arrStatus[1]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		  
-                            </div>
-                        </td>
-                        <td>
-                            <input type="hidden" name="alat3id" value="<?=$arrStatus[1]['id'];?>">
-                            <button type="button" class="btn btn-primary"><?=cek_status($arrStatus[1]['status']);?></button>
-                        </td>
-                        <th>Fan 2</th>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button name="alat4off" type="submit" class="<?=cek_tbl_off($arrStatus[5]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                <button name="alat4on" type="submit" class="<?=cek_tbl_on($arrStatus[5]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
-                            </div>
-                        </td>
-                        <td>
-                            <input type="hidden" name="alat4id" value="<?=$arrStatus[5]['id'];?>">
-                            <button type="button" class="btn btn-primary"><?=cek_status($arrStatus[5]['status']);?></button>			  
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">Pomp 1</th>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button name="alat5off" type="submit" class="<?=cek_tbl_off($arrStatus[2]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                <button name="alat5on" type="submit" class="<?=cek_tbl_on($arrStatus[2]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
-                            </div>
-                        </td>
-                        <td>								     
-                            <input type="hidden" name="alat5id" value="<?=$arrStatus[2]['id'];?>"> 	
-                            <button type="button" class="btn btn-primary"><?=cek_status($arrStatus[2]['status']);?></button>			  
-                        </td>
-                        <th>Pomp 2</th>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button name="alat6off" type="submit" class="<?=cek_tbl_off($arrStatus[6]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                <button name="alat6on" type="submit" class="<?=cek_tbl_on($arrStatus[6]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>	
-                            </div>
-                        </td>
-                        <td>
-                            <input type="hidden" name="alat6id" value="<?=$arrStatus[6]['id'];?>">
-                            <button type="button" class="btn btn-primary"><?=cek_status($arrStatus[6]['status']);?></button>		  
-                        </td>
-                        </tr>
-                        <tr>
-                        <th scope="row">Semai Lamp 1</th>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button name="alat7off" type="submit" class="<?=cek_tbl_off($arrStatus[3]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                <button name="alat7on" type="submit" class="<?=cek_tbl_on($arrStatus[3]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
-                            </div>
-                        </td>
-                        <td>
-                            <input type="hidden" name="alat7id" value="<?=$arrStatus[3]['id'];?>">
-                            <button type="button" class="btn btn-primary"><?=cek_status($arrStatus[3]['status']);?></button>	  
-                        </td>
-                        <th>Semai Lamp 2</th>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button name="alat8off" type="submit" class="<?=cek_tbl_off($arrStatus[7]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                <button name="alat8on" type="submit" class="<?=cek_tbl_on($arrStatus[7]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		 
-                            </div>
-                        </td>
-                        <td>
-                            <input type="hidden" name="alat8id" value="<?=$arrStatus[7]['id'];?>">
-                            <button type="button" class="btn btn-primary"><?=cek_status($arrStatus[7]['status']);?></button>		 
-                        </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <!-- content kontrol manual end -->
@@ -564,154 +659,156 @@
                 <div class="card-body">
                     <form action="" method="post">
                         <table class="table text-center align-middle">
-                            <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Waktu On</th>
-                                <th scope="col">Waktu Off</th>
-                                <th scope="col">Action</th>
-                            </tr>
+                            <thead>                                
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Waktu On</th>
+                                    <th scope="col">Waktu Off</th>
+                                    <th scope="col">Action</th>
+                                </tr>
                             </thead>
-                            <tbody>	                  
-                                <th scope="row">Lampu Tower I</th>
-                                <td>
-                                <div class="input-group">
-                                    <input name="sc1JamS" value="<?=$arrSet[0]['onjam'];?>" readonly id="sc1JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
-                                    <input name="sc1MenitS" value="<?=$arrSet[0]['onmenit'];?>" readonly id="sc1MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
-                                </div>
-                                </td>
-                                <td>
-                                <div class="input-group">
-                                    <input name="sc1JamE" value="<?=$arrSet[0]['offjam'];?>" readonly id="sc1JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
-                                    <input name="sc1MenitE" value="<?=$arrSet[0]['offmenit'];?>" readonly id="sc1MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
-                                </div>
-                                </td>
-                                <td>
-                                <div class="input-group">  
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" onclick="tuJadwalClick(0);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                    <button disabled name="submit0" type="submit" value="set-001" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
-                                    </div>
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Lampu Tower II</th>
-                                <td>
-                                <div class="input-group">
-                                    <input name="sc2JamS" value="<?=$arrSet[1]['onjam'];?>" readonly id="sc2JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
-                                    <input name="sc2MenitS" value="<?=$arrSet[1]['onmenit'];?>" readonly id="sc2MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
-                                </div>
-                                </td>
-                                <td>
+                            <tbody>	    
+                                <tr>
+                                    <th scope="row">Lampu Tower I</th>
+                                    <td>
                                     <div class="input-group">
-                                        <input name="sc2JamE" value="<?=$arrSet[1]['offjam'];?>" readonly id="sc2JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
-                                        <input name="sc2MenitE" value="<?=$arrSet[1]['offmenit'];?>" readonly id="sc2MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
+                                        <input name="sc1JamS" value="<?=$arrSet[0]['onjam'];?>" readonly id="sc1JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
+                                        <input name="sc1MenitS" value="<?=$arrSet[0]['onmenit'];?>" readonly id="sc1MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
                                     </div>
-                                </td>
-                                <td>
-                                    <div class="input-group">    
-                                        <div class="btn-group" role="group" aria-label="Basic example"> 
-                                        <button type="button" onclick="tuJadwalClick(1);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                        <button disabled name="submit1" type="submit" value="set-002" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Lampu Tower Semai</th>
-                                <td>
+                                    </td>
+                                    <td>
                                     <div class="input-group">
-                                        <input name="sc3JamS" value="<?=$arrSet[2]['onjam'];?>" readonly id="sc3JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
-                                        <input name="sc3MenitS" value="<?=$arrSet[2]['onmenit'];?>" readonly id="sc3MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
+                                        <input name="sc1JamE" value="<?=$arrSet[0]['offjam'];?>" readonly id="sc1JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
+                                        <input name="sc1MenitE" value="<?=$arrSet[0]['offmenit'];?>" readonly id="sc1MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
                                     </div>
-                                </td>
-                                <td>
-                                    <div class="input-group">
-                                        <input name="sc3JamE" value="<?=$arrSet[2]['offjam'];?>" readonly id="sc3JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
-                                        <input name="sc3MenitE" value="<?=$arrSet[2]['offmenit'];?>" readonly id="sc3MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-group">   
+                                    </td>
+                                    <td>
+                                    <div class="input-group">  
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" onclick="tuJadwalClick(2);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                        <button disabled name="submit2" type="submit" value="set-003" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                        <button type="button" onclick="tuJadwalClick(0);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                        <button disabled name="submit0" type="submit" value="set-001" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">AC</th>
-                                <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Lampu Tower II</th>
+                                    <td>
                                     <div class="input-group">
-                                        <input name="sc4JamS" value="<?=$arrSet[3]['onjam'];?>" readonly id="sc4JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
-                                        <input name="sc4MenitS" value="<?=$arrSet[3]['onmenit'];?>" readonly id="sc4MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
+                                        <input name="sc2JamS" value="<?=$arrSet[1]['onjam'];?>" readonly id="sc2JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
+                                        <input name="sc2MenitS" value="<?=$arrSet[1]['onmenit'];?>" readonly id="sc2MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
                                     </div>
-                                </td>
-                                <td>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input name="sc2JamE" value="<?=$arrSet[1]['offjam'];?>" readonly id="sc2JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
+                                            <input name="sc2MenitE" value="<?=$arrSet[1]['offmenit'];?>" readonly id="sc2MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">    
+                                            <div class="btn-group" role="group" aria-label="Basic example"> 
+                                            <button type="button" onclick="tuJadwalClick(1);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                            <button disabled name="submit1" type="submit" value="set-002" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Lampu Tower Semai</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <input name="sc3JamS" value="<?=$arrSet[2]['onjam'];?>" readonly id="sc3JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
+                                            <input name="sc3MenitS" value="<?=$arrSet[2]['onmenit'];?>" readonly id="sc3MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input name="sc3JamE" value="<?=$arrSet[2]['offjam'];?>" readonly id="sc3JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
+                                            <input name="sc3MenitE" value="<?=$arrSet[2]['offmenit'];?>" readonly id="sc3MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">   
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" onclick="tuJadwalClick(2);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                            <button disabled name="submit2" type="submit" value="set-003" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">AC</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <input name="sc4JamS" value="<?=$arrSet[3]['onjam'];?>" readonly id="sc4JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
+                                            <input name="sc4MenitS" value="<?=$arrSet[3]['onmenit'];?>" readonly id="sc4MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input name="sc4JamE" value="<?=$arrSet[3]['offjam'];?>" readonly id="sc4JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
+                                            <input name="sc4MenitE" value="<?=$arrSet[3]['offmenit'];?>" readonly id="sc4MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
+                                        </div>
+                                    </td>
+                                    <td>
                                     <div class="input-group">
-                                        <input name="sc4JamE" value="<?=$arrSet[3]['offjam'];?>" readonly id="sc4JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
-                                        <input name="sc4MenitE" value="<?=$arrSet[3]['offmenit'];?>" readonly id="sc4MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
-                                    </div>
-                                </td>
-                                <td>
-                                <div class="input-group">
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" onclick="tuJadwalClick(3);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                        <button disabled name="submit3" type="submit" value="set-004" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
-                                    </div>
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Suhu AC</th>
-                                <td>
-                                    <div class="input-group">                                        
-                                        <input name="acSuhu" value="<?=$arrSet[3]['suhuac'];?>" readonly id="acSuhu" type="text" class="form-control text-center" placeholder="00" aria-label="acSuhu"><span class="input-group-text">&deg;C</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-group">
-                                        
-                                    </div>
-                                </td>
-                                <td>
-                                <div class="input-group">
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" onclick="tuJadwalClick(4);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                        <button disabled name="submit4" type="submit" value="set-004" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
-                                    </div>
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Interval</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                            <tr>
-                                <th scope="row">Timer Sampling</th>
-                                <td>
-                                    <div class="input-group">
-                                        <input name="intervalMenit" value="<?=$arrSet[4]['intervalmenit'];?>" readonly id="intervalMenit" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-group">
-                                        
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-group">   
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" onclick="tuJadwalClick(5);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                            <button disabled name="submit5" type="submit" value="set-005" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                            <button type="button" onclick="tuJadwalClick(3);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                            <button disabled name="submit3" type="submit" value="set-004" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>	                    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Suhu AC</th>
+                                    <td>
+                                        <div class="input-group">                                        
+                                            <input name="acSuhu" value="<?=$arrSet[3]['suhuac'];?>" readonly id="acSuhu" type="text" class="form-control text-center" placeholder="00" aria-label="acSuhu">
+                                            <input value="&deg;C" readonly type="text" class="form-control text-center" placeholder="&deg;C">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            
+                                        </div>
+                                    </td>
+                                    <td>
+                                    <div class="input-group">
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" onclick="tuJadwalClick(4);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                            <button disabled name="submit4" type="submit" value="set-004" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                        </div>
+                                    </div>
+                                    </td>
+                                </tr>
+                                <tr hidden>
+                                    <th scope="col"></th>
+                                    <th scope="col">Interval</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                                <tr hidden>
+                                    <th scope="row">Timer Sampling</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <input name="intervalMenit" value="<?=$arrSet[4]['intervalmenit'];?>" readonly id="intervalMenit" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">   
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button type="button" onclick="tuJadwalClick(5);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                                <button disabled name="submit5" type="submit" value="set-005" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>	                    
                             </tbody>
                         </table>
                     </form>
