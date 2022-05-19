@@ -405,72 +405,105 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Quantico&family=ZCOOL+QingKe+HuangYou&family=Fjalla+One&family=Squada+One&family=Teko&display=swap" rel="stylesheet" />
 
-    <style type="text/css">
-      h2 {
-        font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
-      }
+    <style type="text/css">  
 
-      .btn-group button {
-        font-size: 13px;
-      } 
+    .navbar-light .navbar-nav .nav-link {
+        color: rgba(0,0,0,0.9);
+    }
+    .navbar-light .navbar-nav .nav-link:hover {
+                color: rgba(0,0,0,0.5);
+    }
 
-      .card button.status-on-off {
-        font-size: 13px;
-      }
+    .bayangan {
+        box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+    }
 
-      .card button.status-on-off:hover {
-          cursor: default;
-      }
+    .tema-warna {
+        background-color: #d9f99d;;
+    }
 
-      .input-group span {
-          display: none;
-      }
+    .tema-warna-a {
+        background-color: #bef264;;
+    }
 
-      .input-group input {
-          font-size: 14px;
-      }
+    .tema-warna-b {
+        background-color: floralwhite;   
+    }
 
-      .card {
-        font-family: "Quantico","Fjalla One", sans-serif;     
-        font-size: 14px;   
-      }
+    h2 {
+    font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
+    }
 
-      .footer, nav {
-        font-family: "Quantico", "Fjalla One", sans-serif;        
-      }
+    .btn-group button {
+    font-size: 13px;
+    } 
 
-      @media (min-width: 768px) { 
-      .card {
+    .card button.status-on-off {
+    font-size: 13px;
+    }
+
+    .card button.status-on-off:hover {
+    cursor: default;
+    }
+
+    .input-group span {
+    display: none;
+    }
+
+    .input-group span.derajat {
+    display: block;
+    font-size: 12px;
+    }
+
+    .input-group input {
+    font-size: 12px;
+    }
+
+    .card {
+    font-family: "Quantico","Fjalla One", sans-serif;     
+    font-size: 14px;   
+    }
+
+    .footer, nav {
+    font-family: "Quantico", "Fjalla One", sans-serif;        
+    }
+
+    @media (min-width: 768px) { 
+        .card {
         font-size: 18px;   
-      }
+        }
 
-      .input-group input {
-          font-size: 18px;
-      }
-
-      .input-group span {
-          display: block;
-      }
-
-      .btn-group button {
+        .input-group input {
         font-size: 18px;
-      } 
+        }
 
-      .card button.status-on-off {
-        font-size: 18px;
-      }
+        .input-group span {
+        display: block;
+        }
 
-      button {
+        .input-group span.derajat {          
         font-size: 18px;
-      }
-     }
+        }
+
+        .btn-group button {
+        font-size: 18px;
+        } 
+
+        .card button.status-on-off {
+        font-size: 18px;
+        }
+
+        button {
+        font-size: 18px;
+        }
+    }
     </style>
 
     <title>Hidroponik Smart System - PT. LGAP</title>
     
 
   </head>
-  <body>
+  <body class="tema-warna-b">
 
 <?php include 'temp/navbar.php'; ?>
 
@@ -479,7 +512,7 @@
     <div class="container" style="text-align: center; margin-top: 100px;">    
         <!-- content kontrol manual start -->
         <div class="card text-center" style="width: 100%;">
-            <div class="card-header" style="font-size: 16px; font-weight: bold; background-color: lightskyblue;">
+            <div class="card-header tema-warna" style="font-size: 16px; font-weight: bold;">
             KONTROL MANUAL <?=$ketLantai;?>
             </div>
             <div class="card-body">
@@ -490,7 +523,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="4">TOWER I</th>
+                                            <th colspan="4" class="tema-warna-b">TOWER I</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -545,7 +578,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="4">TOWER II</th>
+                                            <th colspan="4" class="tema-warna-b">TOWER II</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -603,7 +636,7 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th colspan="4">TOWER SEMAI</th>
+                                                <th colspan="4" class="tema-warna-b">TOWER SEMAI</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -653,7 +686,7 @@
         <div style="display: flex; margin-top: 20px;">
             <!-- menampilkan nilai suhu -->
             <div class="card text-center" style="width: 100%;">
-                <div class="card-header" style="font-size: 16px; font-weight: bold; background-color: lightskyblue;">
+                <div class="card-header tema-warna" style="font-size: 16px; font-weight: bold;">
                 SET TIMER <?=$ketLantai;?>
                 </div>
                 <div class="card-body">
@@ -764,8 +797,7 @@
                                     <th scope="row">Suhu AC</th>
                                     <td>
                                         <div class="input-group">                                        
-                                            <input name="acSuhu" value="<?=$arrSet[3]['suhuac'];?>" readonly id="acSuhu" type="text" class="form-control text-center" placeholder="00" aria-label="acSuhu">
-                                            <input value="&deg;C" readonly type="text" class="form-control text-center" placeholder="&deg;C">
+                                            <input name="acSuhu" value="<?=$arrSet[3]['suhuac'];?>" readonly id="acSuhu" type="text" class="form-control text-center" placeholder="00" aria-label="acSuhu"><span class="input-group-text derajat">&deg;C</span>
                                         </div>
                                     </td>
                                     <td>
@@ -819,8 +851,9 @@
 
         <!-- gambar pemanis -->
         <div class="container footer" style="margin-top: 20px;">
-            <img src="images/setetesair.png">
+            <img height="100" src="images/logo.png" alt="logo+teks">
             <h3>PT. LGAP </h3>
+            <h5>LANGGENG AGRO PERSADA </h5>
             <p>&copy; 2022</p>
         </div>
     </div>

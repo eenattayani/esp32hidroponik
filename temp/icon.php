@@ -1,6 +1,6 @@
 <?php 
 
-$urlLogo = "./images/setetesair.png";
+$urlLogo = "./images/logo.png";
 
 ?>
 

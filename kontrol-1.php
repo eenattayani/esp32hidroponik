@@ -221,6 +221,162 @@
         where id='$idalat'
         ");
 
+    } else if (isset($_POST["alat9on"])) {
+        $idalat = $_POST['alat9id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "I";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat9off"])) {
+        $idalat = $_POST['alat9id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "I";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat10on"])) {
+        $idalat = $_POST['alat10id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "J";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat10off"])) {
+        $idalat = $_POST['alat10id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "J";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat11on"])) {
+        $idalat = $_POST['alat11id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "K";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat11off"])) {
+        $idalat = $_POST['alat11id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "K";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat12on"])) {
+        $idalat = $_POST['alat12id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "L";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat12off"])) {
+        $idalat = $_POST['alat12id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "L";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat13on"])) {
+        $idalat = $_POST['alat13id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "M";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat13off"])) {
+        $idalat = $_POST['alat13id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "M";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat14on"])) {
+        $idalat = $_POST['alat14id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "N";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat14off"])) {
+        $idalat = $_POST['alat14id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "N";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
     }
 
 /** akhir pengecekan data POST kontrol manual**/
@@ -322,6 +478,54 @@
 			 where id='$idalat'
 			");
 
+	} else if(isset($_POST["submit6"])){
+        $idalat = $_POST['submit6'];
+
+		$hourstart = $_POST["sc5JamS"];
+		$minstart = $_POST["sc5MenitS"];
+		$hourend = $_POST["sc5JamE"];
+		$minend = $_POST["sc5MenitE"];
+
+		$_SESSION['modeesp'] = "g";
+		$_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+
+		$simpan = mysqli_query($konek, 
+			"update $tbSetTimer
+			 set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+			 where id='$idalat'
+			");
+
+	} else if(isset($_POST["submit7"])){
+        $idalat = $_POST['submit7'];
+
+		$hourstart = $_POST["sc6JamS"];
+		$minstart = $_POST["sc6MenitS"];
+		$hourend = $_POST["sc6JamE"];
+		$minend = $_POST["sc6MenitE"];
+
+		$_SESSION['modeesp'] = "h";
+		$_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+
+		$simpan = mysqli_query($konek, 
+			"update $tbSetTimer
+			 set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+			 where id='$idalat'
+			");
+
+	} else if(isset($_POST["submit8"])){
+        $idalat = $_POST['submit8'];
+
+		$acsuhu = $_POST["acSuhuB"];
+
+		$_SESSION['modeesp'] = "i";
+		$_SESSION['dataesp'] = $acsuhu;
+
+		$simpan = mysqli_query($konek, 
+			"update $tbSetTimer
+			 set suhu=$acsuhu
+			 where id='$idalat'
+			");
+
 	}
 	else {
 		//echo "<br><br><br> tidak ada data";
@@ -417,7 +621,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Quantico&family=ZCOOL+QingKe+HuangYou&family=Fjalla+One&family=Squada+One&family=Teko&display=swap" rel="stylesheet" />
 
-    <style type="text/css">
+    <style type="text/css">  
+
+        .navbar-light .navbar-nav .nav-link {
+            color: rgba(0,0,0,0.9);
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: rgba(0,0,0,0.5);
+        }
+
+        .bayangan {
+            box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .tema-warna {
+            background-color: #d9f99d;;
+        }
+
+        .tema-warna-a {
+            background-color: #bef264;;
+        }
+
+        .tema-warna-b {
+            background-color: floralwhite;   
+        }
+
       h2 {
         font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
       }
@@ -438,8 +667,13 @@
           display: none;
       }
 
+      .input-group span.derajat {
+          display: block;
+          font-size: 12px;
+      }
+
       .input-group input {
-          font-size: 14px;
+          font-size: 12px;
       }
 
       .card {
@@ -464,6 +698,10 @@
           display: block;
       }
 
+      .input-group span.derajat {          
+          font-size: 18px;
+      }
+
       .btn-group button {
         font-size: 18px;
       } 
@@ -482,7 +720,7 @@
     
 
   </head>
-  <body>
+  <body class="tema-warna-b">
 
 <?php include 'temp/navbar.php'; ?>
 
@@ -492,7 +730,7 @@
     <div class="container" style="text-align: center; margin-top: 100px;">    
         <!-- content kontrol manual start -->
         <div class="card text-center" style="width: 100%;">
-            <div class="card-header" style="font-size: 16px; font-weight: bold; background-color: lightskyblue;">
+            <div class="card-header tema-warna" style="font-size: 16px; font-weight: bold;">
             KONTROL MANUAL <?=$ketLantai;?>
             </div>
             <div class="card-body">
@@ -503,7 +741,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="4" class="bg-light">TOWER 1</th>
+                                            <th colspan="4" class="tema-warna-b">TOWER 1</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -558,7 +796,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="4" class="bg-light">TOWER 2</th>
+                                            <th colspan="4" class="tema-warna-b">TOWER 2</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -615,7 +853,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="4" class="bg-light">TOWER 3</th>
+                                            <th colspan="4" class="tema-warna-b">TOWER 3</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -628,39 +866,39 @@
                                             <th scope="col">Lamp 3</th>
                                             <td scope="col">
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button name="alat1off" type="submit" class="<?=cek_tbl_off($arrStatus[0]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                    <button name="alat1on" type="submit" class="<?=cek_tbl_on($arrStatus[0]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>				 	
+                                                    <button name="alat9off" type="submit" class="<?=cek_tbl_off($arrStatus[8]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat9on" type="submit" class="<?=cek_tbl_on($arrStatus[8]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>				 	
                                                 </div>
                                             </td>
                                             <td>
-                                                <input type="hidden" name="alat1id" value="<?=$arrStatus[0]['id'];?>">	
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[0]['status']);?></button>
+                                                <input type="hidden" name="alat9id" value="<?=$arrStatus[8]['id'];?>">	
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[8]['status']);?></button>
                                             </td>                                
                                         </tr>
                                         <tr>
                                             <th scope="row">Fan 3</th>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button name="alat3off" type="submit" class="<?=cek_tbl_off($arrStatus[1]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                    <button name="alat3on" type="submit" class="<?=cek_tbl_on($arrStatus[1]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		  
+                                                    <button name="alat10off" type="submit" class="<?=cek_tbl_off($arrStatus[9]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat10on" type="submit" class="<?=cek_tbl_on($arrStatus[9]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		  
                                                 </div>
                                             </td>
                                             <td>
-                                                <input type="hidden" name="alat3id" value="<?=$arrStatus[1]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[1]['status']);?></button>
+                                                <input type="hidden" name="alat10id" value="<?=$arrStatus[9]['id'];?>">
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[9]['status']);?></button>
                                             </td>                                    
                                         </tr>
                                         <tr>
                                             <th scope="row">Pomp 3</th>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button name="alat5off" type="submit" class="<?=cek_tbl_off($arrStatus[2]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                    <button name="alat5on" type="submit" class="<?=cek_tbl_on($arrStatus[2]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                                                    <button name="alat11off" type="submit" class="<?=cek_tbl_off($arrStatus[10]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat11on" type="submit" class="<?=cek_tbl_on($arrStatus[10]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
                                                 </div>
                                             </td>
                                             <td>								     
-                                                <input type="hidden" name="alat5id" value="<?=$arrStatus[2]['id'];?>"> 	
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[2]['status']);?></button>			  
+                                                <input type="hidden" name="alat11id" value="<?=$arrStatus[10]['id'];?>"> 	
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[10]['status']);?></button>			  
                                             </td>                                    
                                         </tr>                                        
                                     </tbody>
@@ -670,7 +908,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="4" class="bg-light">TOWER 4</th>
+                                            <th colspan="4" class="tema-warna-b">TOWER 4</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -683,39 +921,39 @@
                                             <th scope="col">Lamp 4</th>
                                             <td scope="col">
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button name="alat2off" type="submit" class="<?=cek_tbl_off($arrStatus[4]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                    <button name="alat2on" type="submit" class="<?=cek_tbl_on($arrStatus[4]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                                                    <button name="alat12off" type="submit" class="<?=cek_tbl_off($arrStatus[11]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat12on" type="submit" class="<?=cek_tbl_on($arrStatus[11]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
                                                 </div>
                                             </td>
                                             <td>	
-                                                <input type="hidden" name="alat2id" value="<?=$arrStatus[4]['id'];?>">	
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[4]['status']);?></button>		  
+                                                <input type="hidden" name="alat12id" value="<?=$arrStatus[11]['id'];?>">	
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[11]['status']);?></button>		  
                                             </td>
                                         </tr>
                                         <tr>                                    
                                             <th>Fan 4</th>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button name="alat4off" type="submit" class="<?=cek_tbl_off($arrStatus[5]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                    <button name="alat4on" type="submit" class="<?=cek_tbl_on($arrStatus[5]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                                                    <button name="alat13off" type="submit" class="<?=cek_tbl_off($arrStatus[12]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat13on" type="submit" class="<?=cek_tbl_on($arrStatus[12]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
                                                 </div>
                                             </td>
                                             <td>
-                                                <input type="hidden" name="alat4id" value="<?=$arrStatus[5]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[5]['status']);?></button>			  
+                                                <input type="hidden" name="alat13id" value="<?=$arrStatus[12]['id'];?>">
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[12]['status']);?></button>			  
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Pomp 4</th>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button name="alat6off" type="submit" class="<?=cek_tbl_off($arrStatus[6]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                    <button name="alat6on" type="submit" class="<?=cek_tbl_on($arrStatus[6]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>	
+                                                    <button name="alat14off" type="submit" class="<?=cek_tbl_off($arrStatus[13]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat14on" type="submit" class="<?=cek_tbl_on($arrStatus[13]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>	
                                                 </div>
                                             </td>
                                             <td>
-                                                <input type="hidden" name="alat6id" value="<?=$arrStatus[6]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[6]['status']);?></button>		  
+                                                <input type="hidden" name="alat14id" value="<?=$arrStatus[13]['id'];?>">
+                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[13]['status']);?></button>		  
                                             </td>
                                         </tr>                                        
                                     </tbody>
@@ -728,7 +966,7 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th colspan="4" class="bg-light">TOWER SEMAI</th>
+                                                <th colspan="4" class="tema-warna-b">TOWER SEMAI</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -778,7 +1016,7 @@
         <div style="display: flex; margin-top: 20px;">
             <!-- menampilkan nilai suhu -->
             <div class="card text-center" style="width: 100%;">
-                <div class="card-header" style="font-size: 16px; font-weight: bold; background-color: lightskyblue;">
+                <div class="card-header tema-warna" style="font-size: 16px; font-weight: bold;">
                 SET TIMER <?=$ketLantai;?>
                 </div>
                 <div class="card-body">
@@ -843,21 +1081,21 @@
                                     <th scope="row">Lampu Tower 3</th>
                                     <td>
                                         <div class="input-group">
-                                            <input name="sc5JamS" value="<?=$arrSet[0]['onjam'];?>" readonly id="sc5JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
-                                            <input name="sc5MenitS" value="<?=$arrSet[0]['onmenit'];?>" readonly id="sc5MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
+                                            <input name="sc5JamS" value="<?=$arrSet[5]['onjam'];?>" readonly id="sc5JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
+                                            <input name="sc5MenitS" value="<?=$arrSet[5]['onmenit'];?>" readonly id="sc5MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
-                                            <input name="sc5JamE" value="<?=$arrSet[0]['offjam'];?>" readonly id="sc5JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
-                                            <input name="sc5MenitE" value="<?=$arrSet[0]['offmenit'];?>" readonly id="sc5MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
+                                            <input name="sc5JamE" value="<?=$arrSet[5]['offjam'];?>" readonly id="sc5JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
+                                            <input name="sc5MenitE" value="<?=$arrSet[5]['offmenit'];?>" readonly id="sc5MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">  
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <button type="button" onclick="tuJadwalClick(2);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                                <button disabled name="submit6" type="submit" value="set-001" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                                <button disabled name="submit6" type="submit" value="set-006" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                             </div>
                                         </div>
                                     </td>
@@ -866,21 +1104,21 @@
                                     <th scope="row">Lampu Tower 4</th>
                                     <td>
                                         <div class="input-group">
-                                            <input name="sc6JamS" value="<?=$arrSet[1]['onjam'];?>" readonly id="sc6JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
-                                            <input name="sc6MenitS" value="<?=$arrSet[1]['onmenit'];?>" readonly id="sc6MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
+                                            <input name="sc6JamS" value="<?=$arrSet[6]['onjam'];?>" readonly id="sc6JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
+                                            <input name="sc6MenitS" value="<?=$arrSet[6]['onmenit'];?>" readonly id="sc6MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
-                                            <input name="sc6JamE" value="<?=$arrSet[1]['offjam'];?>" readonly id="sc6JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
-                                            <input name="sc6MenitE" value="<?=$arrSet[1]['offmenit'];?>" readonly id="sc6MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
+                                            <input name="sc6JamE" value="<?=$arrSet[6]['offjam'];?>" readonly id="sc6JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
+                                            <input name="sc6MenitE" value="<?=$arrSet[6]['offmenit'];?>" readonly id="sc6MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">    
                                             <div class="btn-group" role="group" aria-label="Basic example"> 
                                                 <button type="button" onclick="tuJadwalClick(3);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                                <button disabled name="submit7" type="submit" value="set-002" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                                <button disabled name="submit7" type="submit" value="set-007" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                             </div>
                                         </div>
                                     </td>
@@ -932,10 +1170,10 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Suhu AC</th>
+                                    <th scope="row">Suhu AC 1</th>
                                     <td>
                                         <div class="input-group">                                        
-                                            <input name="acSuhu" value="<?=$arrSet[3]['suhuac'];?>" readonly id="acSuhu" type="text" class="form-control text-center" placeholder="00" aria-label="acSuhu"><span class="input-group-text">&deg;C</span>
+                                            <input name="acSuhu" value="<?=$arrSet[3]['suhuac'];?>" readonly id="acSuhu" type="text" class="form-control text-center" placeholder="00" aria-label="acSuhu"><span class="input-group-text derajat">&deg;C</span>
                                         </div>
                                     </td>
                                     <td>
@@ -948,6 +1186,27 @@
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <button type="button" onclick="tuJadwalClick(6);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
                                             <button disabled name="submit4" type="submit" value="set-004" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                        </div>
+                                    </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Suhu AC 2</th>
+                                    <td>
+                                        <div class="input-group">                                        
+                                            <input name="acSuhuB" value="<?=$arrSet[7]['suhuac'];?>" readonly id="acSuhuB" type="text" class="form-control text-center" placeholder="00" aria-label="acSuhuB"><span class="input-group-text derajat">&deg;C</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            
+                                        </div>
+                                    </td>
+                                    <td>
+                                    <div class="input-group">
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" onclick="tuJadwalClick(7);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                            <button disabled name="submit8" type="submit" value="set-008" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                         </div>
                                     </div>
                                     </td>
@@ -973,7 +1232,7 @@
                                     <td>
                                         <div class="input-group">   
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button type="button" onclick="tuJadwalClick(7);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                                <button type="button" onclick="tuJadwalClick(8);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
                                                 <button disabled name="submit5" type="submit" value="set-005" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                             </div>
                                         </div>
@@ -989,8 +1248,9 @@
 
         <!-- gambar pemanis -->
         <div class="container footer" style="margin-top: 20px;">
-            <img src="images/setetesair.png">
+            <img height="100" src="images/logo.png" alt="logo+teks">
             <h3>PT. LGAP </h3>
+            <h5>LANGGENG AGRO PERSADA </h5>
             <p>&copy; 2022</p>
         </div>
     </div>
@@ -1003,6 +1263,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+        window.onscroll = function () {
+            const nav = document.querySelector("nav");
+            const fixedNav = nav.offsetTop;            
+
+            //   console.info(fixedNav);
+            if (window.pageYOffset > fixedNav) {
+                nav.classList.add("bayangan");                
+            } else {
+                nav.classList.remove("bayangan");                
+            }
+        };
+
+
     	const tsJadwal = document.querySelectorAll(".bs-jadwal");
 
     	function tuJadwalClick(sc) {
@@ -1057,7 +1330,11 @@
                   acSuhu.readOnly = false;			      
 			      acSuhu.focus();
 			      break;
-                case 7:			      
+                case 7:
+                  acSuhuB.readOnly = false;			      
+			      acSuhuB.focus();			      
+                  break;
+                case 8:			      
                   intervalMenit.readOnly = false;			      
 			      intervalMenit.focus();
 			      break;			    

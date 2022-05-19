@@ -36,10 +36,10 @@
       </div>
     </nav> -->
 
-    <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: lightskyblue;">
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top tema-warna-a">
       <a class="navbar-brand mb-0 h1" href="index.php">
-        <img src="images/setetesair.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        PT. LGAP
+        <img src="images/logo-teks-1.png" height="60" class="d-inline-block align-top" alt="logo">
+        <!-- <img src="images/logo-teks.png" alt="logo+teks"> -->        
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
