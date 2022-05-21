@@ -526,6 +526,23 @@
 			 where id='$idalat'
 			");
 
+	} else if(isset($_POST["submit9"])){
+        $idalat = $_POST['submit9'];
+
+		$hourstart = $_POST["sc7JamS"];
+		$minstart = $_POST["sc7MenitS"];
+		$hourend = $_POST["sc7JamE"];
+		$minend = $_POST["sc7MenitE"];
+
+		$_SESSION['modeesp'] = "j";
+		$_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+
+		$simpan = mysqli_query($konek, 
+			"update $tbSetTimer
+			 set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+			 where id='$idalat'
+			");
+
 	}
 	else {
 		//echo "<br><br><br> tidak ada data";
@@ -584,14 +601,14 @@
 
     function cek_tbl_off($status)
     {
-        $retVal = ($status == 0) ? 'btn btn-primary' : 'btn btn-secondary';
+        $retVal = ($status == 0) ? 'btn btn-warning tema-warna-c' : 'btn btn-dark';
 
         return $retVal;
     }
 
     function cek_tbl_on($status)
     {
-        $retVal = ($status == 1) ? 'btn btn-primary' : 'btn btn-secondary';
+        $retVal = ($status == 1) ? 'btn btn-warning tema-warna-c' : 'btn btn-dark';
 
         return $retVal;
     }
@@ -647,13 +664,24 @@
             background-color: floralwhite;   
         }
 
+        .tema-warna-c {
+            background-color: #a3e635;
+            border-color: #a3e635;
+        }
+
+        .tema-warna-d {
+            background-color: #44403c;
+            border-color: #44403c;
+        }
+
       h2 {
         font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
       }
 
       .btn-group button {
-        font-size: 13px;
-      } 
+        font-size: 10px;
+        padding: 0.375rem 0.55rem
+    }  
       
       .card button.status-on-off {
         font-size: 13px;
@@ -704,7 +732,8 @@
 
       .btn-group button {
         font-size: 18px;
-      } 
+        padding: 0.375rem 0.75rem
+    } 
 
       .card button.status-on-off {
         font-size: 18px;
@@ -760,7 +789,7 @@
                                             </td>
                                             <td>
                                                 <input type="hidden" name="alat1id" value="<?=$arrStatus[0]['id'];?>">	
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[0]['status']);?></button>
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[0]['status']);?></button>
                                             </td>                                
                                         </tr>
                                         <tr>
@@ -773,7 +802,7 @@
                                             </td>
                                             <td>
                                                 <input type="hidden" name="alat3id" value="<?=$arrStatus[1]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[1]['status']);?></button>
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[1]['status']);?></button>
                                             </td>                                    
                                         </tr>
                                         <tr>
@@ -786,7 +815,7 @@
                                             </td>
                                             <td>								     
                                                 <input type="hidden" name="alat5id" value="<?=$arrStatus[2]['id'];?>"> 	
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[2]['status']);?></button>			  
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[2]['status']);?></button>			  
                                             </td>                                    
                                         </tr>                                       
                                     </tbody>
@@ -815,7 +844,7 @@
                                             </td>
                                             <td>	
                                                 <input type="hidden" name="alat2id" value="<?=$arrStatus[4]['id'];?>">	
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[4]['status']);?></button>		  
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[4]['status']);?></button>		  
                                             </td>
                                         </tr>
                                         <tr>                                    
@@ -828,7 +857,7 @@
                                             </td>
                                             <td>
                                                 <input type="hidden" name="alat4id" value="<?=$arrStatus[5]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[5]['status']);?></button>			  
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[5]['status']);?></button>			  
                                             </td>
                                         </tr>
                                         <tr>
@@ -841,7 +870,7 @@
                                             </td>
                                             <td>
                                                 <input type="hidden" name="alat6id" value="<?=$arrStatus[6]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[6]['status']);?></button>		  
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[6]['status']);?></button>		  
                                             </td>
                                         </tr>                                        
                                     </tbody>
@@ -872,7 +901,7 @@
                                             </td>
                                             <td>
                                                 <input type="hidden" name="alat9id" value="<?=$arrStatus[8]['id'];?>">	
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[8]['status']);?></button>
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[8]['status']);?></button>
                                             </td>                                
                                         </tr>
                                         <tr>
@@ -885,7 +914,7 @@
                                             </td>
                                             <td>
                                                 <input type="hidden" name="alat10id" value="<?=$arrStatus[9]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[9]['status']);?></button>
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[9]['status']);?></button>
                                             </td>                                    
                                         </tr>
                                         <tr>
@@ -898,7 +927,7 @@
                                             </td>
                                             <td>								     
                                                 <input type="hidden" name="alat11id" value="<?=$arrStatus[10]['id'];?>"> 	
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[10]['status']);?></button>			  
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[10]['status']);?></button>			  
                                             </td>                                    
                                         </tr>                                        
                                     </tbody>
@@ -927,7 +956,7 @@
                                             </td>
                                             <td>	
                                                 <input type="hidden" name="alat12id" value="<?=$arrStatus[11]['id'];?>">	
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[11]['status']);?></button>		  
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[11]['status']);?></button>		  
                                             </td>
                                         </tr>
                                         <tr>                                    
@@ -940,7 +969,7 @@
                                             </td>
                                             <td>
                                                 <input type="hidden" name="alat13id" value="<?=$arrStatus[12]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[12]['status']);?></button>			  
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[12]['status']);?></button>			  
                                             </td>
                                         </tr>
                                         <tr>
@@ -953,7 +982,7 @@
                                             </td>
                                             <td>
                                                 <input type="hidden" name="alat14id" value="<?=$arrStatus[13]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[13]['status']);?></button>		  
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[13]['status']);?></button>		  
                                             </td>
                                         </tr>                                        
                                     </tbody>
@@ -985,7 +1014,7 @@
                                                 </td>
                                                 <td>
                                                     <input type="hidden" name="alat7id" value="<?=$arrStatus[3]['id'];?>">
-                                                    <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[3]['status']);?></button>	  
+                                                    <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[3]['status']);?></button>	  
                                                 </td>                                    
                                             </tr>                                      
                                             <tr>
@@ -998,7 +1027,7 @@
                                                 </td>
                                                 <td>
                                                     <input type="hidden" name="alat8id" value="<?=$arrStatus[7]['id'];?>">
-                                                    <button type="button" class="status-on-off btn btn-primary"><?=cek_status($arrStatus[7]['status']);?></button>		 
+                                                    <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[7]['status']);?></button>		 
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -1048,8 +1077,8 @@
                                     <td>
                                         <div class="input-group">  
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button type="button" onclick="tuJadwalClick(0);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                                <button disabled name="submit0" type="submit" value="set-001" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                                <button type="button" onclick="tuJadwalClick(0);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                                <button disabled name="submit0" type="submit" value="set-001" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                             </div>
                                         </div>
                                     </td>
@@ -1071,8 +1100,8 @@
                                     <td>
                                         <div class="input-group">    
                                             <div class="btn-group" role="group" aria-label="Basic example"> 
-                                                <button type="button" onclick="tuJadwalClick(1);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                                <button disabled name="submit1" type="submit" value="set-002" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                                <button type="button" onclick="tuJadwalClick(1);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                                <button disabled name="submit1" type="submit" value="set-002" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                             </div>
                                         </div>
                                     </td>
@@ -1094,8 +1123,8 @@
                                     <td>
                                         <div class="input-group">  
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button type="button" onclick="tuJadwalClick(2);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                                <button disabled name="submit6" type="submit" value="set-006" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                                <button type="button" onclick="tuJadwalClick(2);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                                <button disabled name="submit6" type="submit" value="set-006" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                             </div>
                                         </div>
                                     </td>
@@ -1117,8 +1146,8 @@
                                     <td>
                                         <div class="input-group">    
                                             <div class="btn-group" role="group" aria-label="Basic example"> 
-                                                <button type="button" onclick="tuJadwalClick(3);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                                <button disabled name="submit7" type="submit" value="set-007" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                                <button type="button" onclick="tuJadwalClick(3);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                                <button disabled name="submit7" type="submit" value="set-007" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                             </div>
                                         </div>
                                     </td>
@@ -1140,14 +1169,14 @@
                                     <td>
                                         <div class="input-group">   
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button type="button" onclick="tuJadwalClick(4);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                                <button disabled name="submit2" type="submit" value="set-003" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                                <button type="button" onclick="tuJadwalClick(4);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                                <button disabled name="submit2" type="submit" value="set-003" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">AC</th>
+                                    <th scope="row">AC 1</th>
                                     <td>
                                         <div class="input-group">
                                             <input name="sc4JamS" value="<?=$arrSet[3]['onjam'];?>" readonly id="sc4JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
@@ -1163,8 +1192,8 @@
                                     <td>
                                     <div class="input-group">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" onclick="tuJadwalClick(5);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                            <button disabled name="submit3" type="submit" value="set-004" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                            <button type="button" onclick="tuJadwalClick(5);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                            <button disabled name="submit3" type="submit" value="set-004" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                         </div>
                                     </div>
                                     </td>
@@ -1184,10 +1213,33 @@
                                     <td>
                                     <div class="input-group">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" onclick="tuJadwalClick(6);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                            <button disabled name="submit4" type="submit" value="set-004" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                            <button type="button" onclick="tuJadwalClick(6);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                            <button disabled name="submit4" type="submit" value="set-004" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                         </div>
                                     </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">AC 2</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <input name="sc7JamS" value="<?=$arrSet[7]['onjam'];?>" readonly id="sc7JamS" type="text" class="form-control text-center" placeholder="00" aria-label="Jammulai"><span class="input-group-text">:</span>
+                                            <input name="sc7MenitS" value="<?=$arrSet[7]['onmenit'];?>" readonly id="sc7MenitS" type="text" class="form-control text-center" placeholder="00" aria-label="Menitmulai">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input name="sc7JamE" value="<?=$arrSet[7]['offjam'];?>" readonly id="sc7JamE" type="text" class="form-control text-center" placeholder="00" aria-label="Jamselesai"><span class="input-group-text">:</span>
+                                            <input name="sc7MenitE" value="<?=$arrSet[7]['offmenit'];?>" readonly id="sc7MenitE" type="text" class="form-control text-center" placeholder="00" aria-label="Menitselesai">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">    
+                                            <div class="btn-group" role="group" aria-label="Basic example"> 
+                                                <button type="button" onclick="tuJadwalClick(7);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                                <button disabled name="submit9" type="submit" value="set-008" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1205,8 +1257,8 @@
                                     <td>
                                     <div class="input-group">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" onclick="tuJadwalClick(7);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                            <button disabled name="submit8" type="submit" value="set-008" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                            <button type="button" onclick="tuJadwalClick(8);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                            <button disabled name="submit8" type="submit" value="set-008" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                         </div>
                                     </div>
                                     </td>
@@ -1232,8 +1284,8 @@
                                     <td>
                                         <div class="input-group">   
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button type="button" onclick="tuJadwalClick(8);" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
-                                                <button disabled name="submit5" type="submit" value="set-005" class="btn btn-primary bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
+                                                <button type="button" onclick="tuJadwalClick(9);" class="btn btn-dark tema-warna-d" data-bs-toggle="tooltip" data-bs-placement="bottom" title="ubah"><i class="bi bi-pencil-square"></i></button>
+                                                <button disabled name="submit5" type="submit" value="set-005" class="btn btn-warning tema-warna-c bs-jadwal" data-bs-toggle="tooltip" data-bs-placement="bottom" title="simpan"><i class="bi bi-save2"></i></button>
                                             </div>
                                         </div>
                                     </td>
@@ -1331,10 +1383,17 @@
 			      acSuhu.focus();
 			      break;
                 case 7:
+                  sc7JamS.readOnly = false;
+			      sc7MenitS.readOnly = false;
+			      sc7JamE.readOnly = false;
+			      sc7MenitE.readOnly = false;
+			      sc7JamS.focus();
+                  break;
+                case 8:
                   acSuhuB.readOnly = false;			      
 			      acSuhuB.focus();			      
                   break;
-                case 8:			      
+                case 9:			      
                   intervalMenit.readOnly = false;			      
 			      intervalMenit.focus();
 			      break;			    
