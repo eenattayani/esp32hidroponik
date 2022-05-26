@@ -49,9 +49,10 @@
           <a class="nav-link" href="kontrol-1.php"><i class="<?=$iconI;?>" aria-hidden="true"></i> Lantai 1</a>          
           <a class="nav-link" href="kontrol-2.php"><i class="<?=$iconII;?>" aria-hidden="true"></i> Lantai 2</a>          
           <a class="nav-link" href="kontrol-3.php"><i class="<?=$iconIII;?>" aria-hidden="true"></i> Lantai 3</a>        
+          <a class="nav-link btn btn-outline-success btn-logout-m" style="color: #44403c;" href="login.php"><i class="bi bi-box-arrow-left"></i> Logout</a>
         </div>
       </div>
-      <form class="form-inline my-2 my-lg-0">        
+      <form class="form-inline my-2 my-lg-0 btn-logout-w">        
         <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fa fa-building-o" aria-hidden="true"></i> Logout</button> -->
         <a class="nav-link btn btn-outline-success" style="color: #44403c;" href="login.php"><i class="bi bi-box-arrow-left"></i> Logout</a>
       </form>

@@ -653,13 +653,25 @@
 
     <style type="text/css">  
 
+        .btn-logout-m{
+           display: block;  
+           background-color: #a3e635;
+           width: 40%;   
+           max-height: 45px;
+        }
+        
+        .btn-logout-w{
+           background-color: #a3e635;
+           display: none;     
+        }
+
         .navbar-light .navbar-nav .nav-link {
             color: rgba(0,0,0,0.9);
         }
 
         .navbar-light .navbar-nav .nav-link:hover {
-            color: rgba(0,0,0,0.5);
-        }
+                    color: rgba(0,0,0,0.5);
+        }        
 
         .bayangan {
             box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
@@ -687,75 +699,93 @@
             border-color: #44403c;
         }
 
-      h2 {
-        font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
-      }
+        h2 {
+            font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
+        }
 
-      .btn-group button {
-            font-size: 10px;
-            padding: 0.375rem 0.55rem
-        }  
-      
-      .card button.status-on-off {
-        font-size: 13px;
-      }
+        .card button.status-on-off {
+            font-size: 13px;
+        }
 
-      .card button.status-on-off:hover {
-          cursor: default;
-      }
+        .card button.status-on-off:hover {
+            cursor: default;
+        }
 
-      .input-group span {
-          display: none;
-      }
+        .input-group span {
+            display: none;
+        }
 
-      .input-group span.derajat {
-          display: block;
-          font-size: 12px;
-      }
+        .input-group span.derajat {
+            display: block;
+            font-size: 12px;
+        }
 
-      .input-group input {
-          font-size: 12px;
-      }
+        .input-group input {
+            font-size: 12px;
+            padding: 0.3rem 0.2rem;
+        }
 
-      .card {
-        font-family: "Quantico","Fjalla One", sans-serif;     
-        font-size: 14px;   
-      }
+        .btn-group button {
+            font-size: 12px;
+            padding: 0.375rem 0.55rem;
+        }
 
-      .footer, nav {
-        font-family: "Quantico", "Fjalla One", sans-serif;        
-      }
+        .card {
+            font-family: "Quantico","Fjalla One", sans-serif;     
+            font-size: 13px;   
+        }
 
-      @media (min-width: 768px) { 
-      .card {
-        font-size: 18px;   
-      }
+        .footer, nav {
+            font-family: "Quantico", "Fjalla One", sans-serif;        
+        }
 
-      .input-group input {
-          font-size: 18px;
-      }
+        @media (min-width: 576px) { 
+            .navbar-light .navbar-nav .nav-link {
+                font-size: 14px;
+            }
 
-      .input-group span {
-          display: block;
-      }
+            .btn-logout-m{
+                display: none;     
+            }
+            
+            .btn-logout-w{
+                display: block;     
+            }
+            .card {
+                font-size: 18px;   
+            }
 
-      .input-group span.derajat {          
-          font-size: 18px;
-      }
+            .input-group input {
+                font-size: 18px;
+            }
 
-      .btn-group button {
-            font-size: 18px;
-            padding: 0.375rem 0.75rem
-        } 
+            .input-group span {
+                display: block;
+            }
 
-      .card button.status-on-off {
-        font-size: 18px;
-      }
+            .input-group span.derajat {          
+                font-size: 18px;
+            }
 
-      button {
-        font-size: 18px;
-      }
-     }
+            .btn-group button {
+                font-size: 18px;
+                padding: 0.375rem 0.75rem
+            } 
+
+            .card button.status-on-off {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .navbar-light .navbar-nav .nav-link {
+                font-size: 18px;
+            }
+        }
     </style>
 
     <title>Hidroponik Smart System - PT. LGAP</title>
@@ -1003,50 +1033,48 @@
                             </div>                        
                         </div>
                         <div class="row">
-                            <div class="col">
-                                <div class="col-lg-6">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="4" class="tema-warna-b">TOWER SEMAI</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>                                        
-                                                <th>#</th>								  		
-                                                <th>Saklar</th>
-                                                <th>Status</th>
-                                            </tr>  
-                                            <tr>
-                                                <th scope="row">Lampu Semai</th>
-                                                <td>
-                                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                                        <button name="alat7off" type="submit" class="<?=cek_tbl_off($arrStatus[3]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                        <button name="alat7on" type="submit" class="<?=cek_tbl_on($arrStatus[3]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <input type="hidden" name="alat7id" value="<?=$arrStatus[3]['id'];?>">
-                                                    <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[3]['status']);?></button>	  
-                                                </td>                                    
-                                            </tr>                                      
-                                            <tr>
-                                                <th>Kipas Semai</th>
-                                                <td>
-                                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                                        <button name="alat8off" type="submit" class="<?=cek_tbl_off($arrStatus[7]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                        <button name="alat8on" type="submit" class="<?=cek_tbl_on($arrStatus[7]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		 
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <input type="hidden" name="alat8id" value="<?=$arrStatus[7]['id'];?>">
-                                                    <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[7]['status']);?></button>		 
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <div class="col-lg-6">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4" class="tema-warna-b">TOWER SEMAI</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>                                        
+                                            <th>#</th>								  		
+                                            <th>Saklar</th>
+                                            <th>Status</th>
+                                        </tr>  
+                                        <tr>
+                                            <th scope="row">Lampu Semai</th>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <button name="alat7off" type="submit" class="<?=cek_tbl_off($arrStatus[3]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat7on" type="submit" class="<?=cek_tbl_on($arrStatus[3]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="alat7id" value="<?=$arrStatus[3]['id'];?>">
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[3]['status']);?></button>	  
+                                            </td>                                    
+                                        </tr>                                      
+                                        <tr>
+                                            <th>Kipas Semai</th>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <button name="alat8off" type="submit" class="<?=cek_tbl_off($arrStatus[7]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                    <button name="alat8on" type="submit" class="<?=cek_tbl_on($arrStatus[7]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		 
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="alat8id" value="<?=$arrStatus[7]['id'];?>">
+                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[7]['status']);?></button>		 
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>                            
                         </div>
                     </div>
                 </form>

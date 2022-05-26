@@ -416,108 +416,137 @@
 
     <style type="text/css">  
 
-    .navbar-light .navbar-nav .nav-link {
-        color: rgba(0,0,0,0.9);
-    }
-    .navbar-light .navbar-nav .nav-link:hover {
-                color: rgba(0,0,0,0.5);
-    }
-
-    .bayangan {
-        box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
-    }
-
-    .tema-warna {
-        background-color: #d9f99d;;
-    }
-
-    .tema-warna-a {
-        background-color: #bef264;;
-    }
-
-    .tema-warna-b {
-        background-color: floralwhite;   
-    }
-
-    .tema-warna-c {
-        background-color: #a3e635;
-        border-color: #a3e635;
-    }
-
-    .tema-warna-d {
-        background-color: #44403c;
-        border-color: #44403c;
-    }
-
-    h2 {
-    font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
-    }
-
-    .card button.status-on-off {
-    font-size: 13px;
-    }
-
-    .card button.status-on-off:hover {
-    cursor: default;
-    }
-
-    .input-group span {
-    display: none;
-    }
-
-    .input-group span.derajat {
-    display: block;
-    font-size: 12px;
-    }
-
-    .input-group input {
-    font-size: 12px;
-    }
-
-    .btn-group button {
-        font-size: 10px;
-        padding: 0.375rem 0.55rem
-    }
-
-    .card {
-    font-family: "Quantico","Fjalla One", sans-serif;     
-    font-size: 14px;   
-    }
-
-    .footer, nav {
-    font-family: "Quantico", "Fjalla One", sans-serif;        
-    }
-
-    @media (min-width: 768px) { 
-        .card {
-        font-size: 18px;   
+        .btn-logout-m{
+           display: block;  
+           width: 50%;   
+           max-height: 45px;
+        }
+        
+        .btn-logout-w{
+           display: none;     
         }
 
-        .input-group input {
-        font-size: 18px;
+        .navbar-light .navbar-nav .nav-link {
+            color: rgba(0,0,0,0.9);
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+                    color: rgba(0,0,0,0.5);
+        }        
+
+        .bayangan {
+            box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .tema-warna {
+            background-color: #d9f99d;;
+        }
+
+        .tema-warna-a {
+            background-color: #bef264;;
+        }
+
+        .tema-warna-b {
+            background-color: floralwhite;   
+        }
+
+        .tema-warna-c {
+            background-color: #a3e635;
+            border-color: #a3e635;
+        }
+
+        .tema-warna-d {
+            background-color: #44403c;
+            border-color: #44403c;
+        }
+
+        h2 {
+            font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
+        }
+
+        .card button.status-on-off {
+            font-size: 13px;
+        }
+
+        .card button.status-on-off:hover {
+            cursor: default;
         }
 
         .input-group span {
-        display: block;
+            display: none;
         }
 
-        .input-group span.derajat {          
-        font-size: 18px;
+        .input-group span.derajat {
+            display: block;
+            font-size: 12px;
+        }
+
+        .input-group input {
+            font-size: 12px;
+            padding: 0.3rem 0.2rem;
         }
 
         .btn-group button {
-            font-size: 18px;
-            padding: 0.375rem 0.75rem
-        } 
-
-        .card button.status-on-off {
-        font-size: 18px;
+            font-size: 12px;
+            padding: 0.375rem 0.55rem;
         }
 
-        button {
-        font-size: 18px;
+        .card {
+            font-family: "Quantico","Fjalla One", sans-serif;     
+            font-size: 13px;   
         }
-    }
+
+        .footer, nav {
+            font-family: "Quantico", "Fjalla One", sans-serif;        
+        }
+
+        @media (min-width: 576px) { 
+            .navbar-light .navbar-nav .nav-link {
+                font-size: 14px;
+            }
+
+            .btn-logout-m{
+                display: none;     
+            }
+            
+            .btn-logout-w{
+                display: block;     
+            }
+            .card {
+                font-size: 18px;   
+            }
+
+            .input-group input {
+                font-size: 18px;
+            }
+
+            .input-group span {
+                display: block;
+            }
+
+            .input-group span.derajat {          
+                font-size: 18px;
+            }
+
+            .btn-group button {
+                font-size: 18px;
+                padding: 0.375rem 0.75rem
+            } 
+
+            .card button.status-on-off {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .navbar-light .navbar-nav .nav-link {
+                font-size: 18px;
+            }
+        }
     </style>
 
     <title>Hidroponik Smart System - PT. LGAP</title>
@@ -530,7 +559,7 @@
 
 
 <!-- content start -->
-    <div class="container" style="text-align: center; margin-top: 100px;">    
+    <div class="container" style="text-align: center; margin-top: 110px;">    
         <!-- content kontrol manual start -->
         <div class="card text-center" style="width: 100%;">
             <div class="card-header tema-warna" style="font-size: 16px; font-weight: bold;">
@@ -651,8 +680,7 @@
                                 </table>
                             </div>                        
                         </div>
-                        <div class="row">
-                            <div class="col">
+                        <div class="row">                            
                                 <div class="col-lg-6">
                                     <table class="table">
                                         <thead>
@@ -694,8 +722,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
+                                </div>                            
                         </div>
                     </div>
                 </form>
@@ -887,6 +914,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+        window.onscroll = function () {
+            const nav = document.querySelector("nav");
+            const fixedNav = nav.offsetTop;            
+
+            //   console.info(fixedNav);
+            if (window.pageYOffset > fixedNav) {
+                nav.classList.add("bayangan");                
+            } else {
+                nav.classList.remove("bayangan");                
+            }
+        };
+        
     	const tsJadwal = document.querySelectorAll(".bs-jadwal");
 
     	function tuJadwalClick(sc) {

@@ -23,606 +23,606 @@
 /** variabel end*/
 
 /** awal pengecekan data POST kontrol manual**/
-if (isset($_POST["alat1on"])) {
-    $idalat = $_POST['alat1id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "A";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat1off"])) {
-    $idalat = $_POST['alat1id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "A";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat2on"])) {
-    $idalat = $_POST['alat2id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "B";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat2off"])) {
-    $idalat = $_POST['alat2id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "B";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat3on"])) {
-    $idalat = $_POST['alat3id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "C";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat3off"])) {
-    $idalat = $_POST['alat3id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "C";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat4on"])) {
-    $idalat = $_POST['alat4id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "D";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat4off"])) {
-    $idalat = $_POST['alat4id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "D";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat5on"])) {
-    $idalat = $_POST['alat5id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "E";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat5off"])) {
-    $idalat = $_POST['alat5id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "E";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat6on"])) {
-    $idalat = $_POST['alat6id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "F";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat6off"])) {
-    $idalat = $_POST['alat6id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "F";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat7on"])) {
-    $idalat = $_POST['alat7id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "G";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat7off"])) {
-    $idalat = $_POST['alat7id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "G";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat8on"])) {
-    $idalat = $_POST['alat8id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "H";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat8off"])) {
-    $idalat = $_POST['alat8id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "H";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat9on"])) {
-    $idalat = $_POST['alat9id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "I";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat9off"])) {
-    $idalat = $_POST['alat9id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "I";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat10on"])) {
-    $idalat = $_POST['alat10id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "J";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat10off"])) {
-    $idalat = $_POST['alat10id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "J";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat11on"])) {
-    $idalat = $_POST['alat11id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "K";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat11off"])) {
-    $idalat = $_POST['alat11id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "K";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat12on"])) {
-    $idalat = $_POST['alat12id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "L";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat12off"])) {
-    $idalat = $_POST['alat12id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "L";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat13on"])) {
-    $idalat = $_POST['alat13id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "M";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat13off"])) {
-    $idalat = $_POST['alat13id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "M";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat14on"])) {
-    $idalat = $_POST['alat14id'];
-    $statusalat = 1;
-
-    $_SESSION['modeesp'] = "N";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-} else if (isset($_POST["alat14off"])) {
-    $idalat = $_POST['alat14id'];
-    $statusalat = 0;
-
-    $_SESSION['modeesp'] = "N";
-    $_SESSION['dataesp'] = $statusalat;
-
-    $simpan = mysqli_query($konek,
-    "update $tbKontrolManual 
-    set status=$statusalat 
-    where id='$idalat'
-    ");
-
-}
+    if (isset($_POST["alat1on"])) {
+        $idalat = $_POST['alat1id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "A";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat1off"])) {
+        $idalat = $_POST['alat1id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "A";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat2on"])) {
+        $idalat = $_POST['alat2id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "B";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat2off"])) {
+        $idalat = $_POST['alat2id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "B";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat3on"])) {
+        $idalat = $_POST['alat3id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "C";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat3off"])) {
+        $idalat = $_POST['alat3id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "C";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat4on"])) {
+        $idalat = $_POST['alat4id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "D";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat4off"])) {
+        $idalat = $_POST['alat4id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "D";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat5on"])) {
+        $idalat = $_POST['alat5id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "E";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat5off"])) {
+        $idalat = $_POST['alat5id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "E";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat6on"])) {
+        $idalat = $_POST['alat6id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "F";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat6off"])) {
+        $idalat = $_POST['alat6id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "F";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat7on"])) {
+        $idalat = $_POST['alat7id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "G";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat7off"])) {
+        $idalat = $_POST['alat7id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "G";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat8on"])) {
+        $idalat = $_POST['alat8id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "H";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat8off"])) {
+        $idalat = $_POST['alat8id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "H";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat9on"])) {
+        $idalat = $_POST['alat9id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "I";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat9off"])) {
+        $idalat = $_POST['alat9id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "I";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat10on"])) {
+        $idalat = $_POST['alat10id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "J";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat10off"])) {
+        $idalat = $_POST['alat10id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "J";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat11on"])) {
+        $idalat = $_POST['alat11id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "K";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat11off"])) {
+        $idalat = $_POST['alat11id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "K";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat12on"])) {
+        $idalat = $_POST['alat12id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "L";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat12off"])) {
+        $idalat = $_POST['alat12id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "L";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat13on"])) {
+        $idalat = $_POST['alat13id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "M";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat13off"])) {
+        $idalat = $_POST['alat13id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "M";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat14on"])) {
+        $idalat = $_POST['alat14id'];
+        $statusalat = 1;
+
+        $_SESSION['modeesp'] = "N";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    } else if (isset($_POST["alat14off"])) {
+        $idalat = $_POST['alat14id'];
+        $statusalat = 0;
+
+        $_SESSION['modeesp'] = "N";
+        $_SESSION['dataesp'] = $statusalat;
+
+        $simpan = mysqli_query($konek,
+        "update $tbKontrolManual 
+        set status=$statusalat 
+        where id='$idalat'
+        ");
+
+    }
 
 /** akhir pengecekan data POST kontrol manual**/
 
 /** awal pengecekan data POST  set timer**/
-if(isset($_POST["submit0"])){
-    $idalat = $_POST['submit0'];
+    if(isset($_POST["submit0"])){
+        $idalat = $_POST['submit0'];
 
-    $hourstart = $_POST["sc1JamS"];
-    $minstart = $_POST["sc1MenitS"];
-    $hourend = $_POST["sc1JamE"];
-    $minend = $_POST["sc1MenitE"];
+        $hourstart = $_POST["sc1JamS"];
+        $minstart = $_POST["sc1MenitS"];
+        $hourend = $_POST["sc1JamE"];
+        $minend = $_POST["sc1MenitE"];
 
-    $_SESSION['modeesp'] = "a";
-    $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['modeesp'] = "a";
+        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+            where id='$idalat'
+            ");
 
-} else if(isset($_POST["submit1"])){
-    $idalat = $_POST['submit1'];
+    } else if(isset($_POST["submit1"])){
+        $idalat = $_POST['submit1'];
 
-    $hourstart = $_POST["sc2JamS"];
-    $minstart = $_POST["sc2MenitS"];
-    $hourend = $_POST["sc2JamE"];
-    $minend = $_POST["sc2MenitE"];
+        $hourstart = $_POST["sc2JamS"];
+        $minstart = $_POST["sc2MenitS"];
+        $hourend = $_POST["sc2JamE"];
+        $minend = $_POST["sc2MenitE"];
 
-    $_SESSION['modeesp'] = "b";
-    $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['modeesp'] = "b";
+        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+            where id='$idalat'
+            ");
 
-} else if(isset($_POST["submit2"])){
-    $idalat = $_POST['submit2'];
+    } else if(isset($_POST["submit2"])){
+        $idalat = $_POST['submit2'];
 
-    $hourstart = $_POST["sc3JamS"];
-    $minstart = $_POST["sc3MenitS"];
-    $hourend = $_POST["sc3JamE"];
-    $minend = $_POST["sc3MenitE"];
+        $hourstart = $_POST["sc3JamS"];
+        $minstart = $_POST["sc3MenitS"];
+        $hourend = $_POST["sc3JamE"];
+        $minend = $_POST["sc3MenitE"];
 
-    $_SESSION['modeesp'] = "c";
-    $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['modeesp'] = "c";
+        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+            where id='$idalat'
+            ");
 
-} else if(isset($_POST["submit3"])){
-    $idalat = $_POST['submit3'];
+    } else if(isset($_POST["submit3"])){
+        $idalat = $_POST['submit3'];
 
-    $hourstart = $_POST["sc4JamS"];
-    $minstart = $_POST["sc4MenitS"];
-    $hourend = $_POST["sc4JamE"];
-    $minend = $_POST["sc4MenitE"];
+        $hourstart = $_POST["sc4JamS"];
+        $minstart = $_POST["sc4MenitS"];
+        $hourend = $_POST["sc4JamE"];
+        $minend = $_POST["sc4MenitE"];
 
-    $_SESSION['modeesp'] = "d";
-    $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['modeesp'] = "d";
+        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+            where id='$idalat'
+            ");
 
-} else if(isset($_POST["submit4"])){
-    $idalat = $_POST['submit4'];
+    } else if(isset($_POST["submit4"])){
+        $idalat = $_POST['submit4'];
 
-    $acsuhu = $_POST["acSuhu"];
+        $acsuhu = $_POST["acSuhu"];
 
-    $_SESSION['modeesp'] = "e";
-    $_SESSION['dataesp'] = $acsuhu;
+        $_SESSION['modeesp'] = "e";
+        $_SESSION['dataesp'] = $acsuhu;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set suhu=$acsuhu
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set suhu=$acsuhu
+            where id='$idalat'
+            ");
 
-} else if(isset($_POST["submit5"])){
-    $idalat = $_POST['submit5'];
+    } else if(isset($_POST["submit5"])){
+        $idalat = $_POST['submit5'];
 
-    $intervalmenit = $_POST["intervalMenit"];
+        $intervalmenit = $_POST["intervalMenit"];
 
-    $_SESSION['modeesp'] = "f";
-    $_SESSION['dataesp'] = $intervalmenit;
+        $_SESSION['modeesp'] = "f";
+        $_SESSION['dataesp'] = $intervalmenit;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set interval_menit=$intervalmenit
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set interval_menit=$intervalmenit
+            where id='$idalat'
+            ");
 
-} else if(isset($_POST["submit6"])){
-    $idalat = $_POST['submit6'];
+    } else if(isset($_POST["submit6"])){
+        $idalat = $_POST['submit6'];
 
-    $hourstart = $_POST["sc5JamS"];
-    $minstart = $_POST["sc5MenitS"];
-    $hourend = $_POST["sc5JamE"];
-    $minend = $_POST["sc5MenitE"];
+        $hourstart = $_POST["sc5JamS"];
+        $minstart = $_POST["sc5MenitS"];
+        $hourend = $_POST["sc5JamE"];
+        $minend = $_POST["sc5MenitE"];
 
-    $_SESSION['modeesp'] = "g";
-    $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['modeesp'] = "g";
+        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+            where id='$idalat'
+            ");
 
-} else if(isset($_POST["submit7"])){
-    $idalat = $_POST['submit7'];
+    } else if(isset($_POST["submit7"])){
+        $idalat = $_POST['submit7'];
 
-    $hourstart = $_POST["sc6JamS"];
-    $minstart = $_POST["sc6MenitS"];
-    $hourend = $_POST["sc6JamE"];
-    $minend = $_POST["sc6MenitE"];
+        $hourstart = $_POST["sc6JamS"];
+        $minstart = $_POST["sc6MenitS"];
+        $hourend = $_POST["sc6JamE"];
+        $minend = $_POST["sc6MenitE"];
 
-    $_SESSION['modeesp'] = "h";
-    $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['modeesp'] = "h";
+        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+            where id='$idalat'
+            ");
 
-} else if(isset($_POST["submit8"])){
-    $idalat = $_POST['submit8'];
+    } else if(isset($_POST["submit8"])){
+        $idalat = $_POST['submit8'];
 
-    $acsuhu = $_POST["acSuhuB"];
+        $acsuhu = $_POST["acSuhuB"];
 
-    $_SESSION['modeesp'] = "i";
-    $_SESSION['dataesp'] = $acsuhu;
+        $_SESSION['modeesp'] = "i";
+        $_SESSION['dataesp'] = $acsuhu;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set suhu=$acsuhu
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set suhu=$acsuhu
+            where id='$idalat'
+            ");
 
-} else if(isset($_POST["submit9"])){
-    $idalat = $_POST['submit9'];
+    } else if(isset($_POST["submit9"])){
+        $idalat = $_POST['submit9'];
 
-    $hourstart = $_POST["sc7JamS"];
-    $minstart = $_POST["sc7MenitS"];
-    $hourend = $_POST["sc7JamE"];
-    $minend = $_POST["sc7MenitE"];
+        $hourstart = $_POST["sc7JamS"];
+        $minstart = $_POST["sc7MenitS"];
+        $hourend = $_POST["sc7JamE"];
+        $minend = $_POST["sc7MenitE"];
 
-    $_SESSION['modeesp'] = "j";
-    $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['modeesp'] = "j";
+        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
-    $simpan = mysqli_query($konek, 
-        "update $tbSetTimer
-         set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
-         where id='$idalat'
-        ");
+        $simpan = mysqli_query($konek, 
+            "update $tbSetTimer
+            set on_jam=$hourstart, on_menit=$minstart, off_jam=$hourend, off_menit=$minend
+            where id='$idalat'
+            ");
 
-}
+    }
 
-else {
-    //echo "<br><br><br> tidak ada data";
-}
+    else {
+        //echo "<br><br><br> tidak ada data";
+    }
 
 /** akhir pengecekan data POST set timer**/
 
 
 /** awal baca database  timer**/
-$arrSet = array();
+    $arrSet = array();
 
-$sql = mysqli_query($konek, "select * from $tbSetTimer"); 
+    $sql = mysqli_query($konek, "select * from $tbSetTimer"); 
 
-if (!$sql) {
-    echo "Error: " . $sql . "<br>" . mysqli_error($konek);
-}
+    if (!$sql) {
+        echo "Error: " . $sql . "<br>" . mysqli_error($konek);
+    }
 
-foreach ($sql as $key => $value) {
-    $h['id'] = $value['id'];
-    $h['nama'] = $value['nama_set'];
-    $h['onjam'] = $value['on_jam'];
-    $h['onmenit'] = $value['on_menit'];
-    $h['offjam'] = $value['off_jam'];
-    $h['offmenit'] = $value['off_menit'];
-    $h['intervalmenit'] = $value['interval_menit'];
-    $h['suhuac'] = $value['suhu'];
+    foreach ($sql as $key => $value) {
+        $h['id'] = $value['id'];
+        $h['nama'] = $value['nama_set'];
+        $h['onjam'] = $value['on_jam'];
+        $h['onmenit'] = $value['on_menit'];
+        $h['offjam'] = $value['off_jam'];
+        $h['offmenit'] = $value['off_menit'];
+        $h['intervalmenit'] = $value['interval_menit'];
+        $h['suhuac'] = $value['suhu'];
 
-    array_push($arrSet, $h);
-}
+        array_push($arrSet, $h);
+    }
 /** akhir baca database timer**/
 
 /** awal baca database kontrol**/
-$arrStatus = array();
+    $arrStatus = array();
 
-$sql = mysqli_query($konek, "select id, status from $tbKontrolManual");
+    $sql = mysqli_query($konek, "select id, status from $tbKontrolManual");
 
-if (!$sql) {
-    echo "Error: " . $sql . "<br>" . mysqli_error($konek);
-}
+    if (!$sql) {
+        echo "Error: " . $sql . "<br>" . mysqli_error($konek);
+    }
 
-foreach ($sql as $key => $value) {
-    $h['id'] = $value['id'];
-    $h['status'] = $value['status'];
+    foreach ($sql as $key => $value) {
+        $h['id'] = $value['id'];
+        $h['status'] = $value['status'];
 
-    array_push($arrStatus, $h);
-}
+        array_push($arrStatus, $h);
+    }
 /** akhir baca database kontrol**/
 
 /** kumpulan function **/
-function cek_status($status)
-{
-    $retVal = ($status == 1) ? 'Nyala' : 'Padam' ;
+    function cek_status($status)
+    {
+        $retVal = ($status == 1) ? 'Nyala' : 'Padam' ;
 
-    return $retVal;
-}
+        return $retVal;
+    }
 
-function cek_tbl_off($status)
-{
-    $retVal = ($status == 0) ? 'btn btn-warning tema-warna-c' : 'btn btn-dark';
+    function cek_tbl_off($status)
+    {
+        $retVal = ($status == 0) ? 'btn btn-warning tema-warna-c' : 'btn btn-dark';
 
-    return $retVal;
-}
+        return $retVal;
+    }
 
-function cek_tbl_on($status)
-{
-    $retVal = ($status == 1) ? 'btn btn-warning tema-warna-c' : 'btn btn-dark';
+    function cek_tbl_on($status)
+    {
+        $retVal = ($status == 1) ? 'btn btn-warning tema-warna-c' : 'btn btn-dark';
 
-    return $retVal;
-}
+        return $retVal;
+    }
 /** akhir kumpulan function **/
 
 
@@ -651,13 +651,23 @@ function cek_tbl_on($status)
 
 <style type="text/css">  
 
+    .btn-logout-m{
+        display: block;  
+        width: 50%;   
+        max-height: 45px;
+    }
+    
+    .btn-logout-w{
+        display: none;     
+    }
+
     .navbar-light .navbar-nav .nav-link {
         color: rgba(0,0,0,0.9);
     }
 
     .navbar-light .navbar-nav .nav-link:hover {
         color: rgba(0,0,0,0.5);
-    }
+    }        
 
     .bayangan {
         box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
@@ -685,75 +695,93 @@ function cek_tbl_on($status)
         border-color: #44403c;
     }
 
-  h2 {
-    font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
-  }
+    h2 {
+        font-family: "Squada One", "Teko", "Fjalla One", sans-serif;        
+    }
 
-  .btn-group button {
-        font-size: 10px;
-        padding: 0.375rem 0.55rem
-    } 
-  
-  .card button.status-on-off {
-    font-size: 13px;
-  }
+    .card button.status-on-off {
+        font-size: 13px;
+    }
 
-  .card button.status-on-off:hover {
-      cursor: default;
-  }
+    .card button.status-on-off:hover {
+        cursor: default;
+    }
 
-  .input-group span {
-      display: none;
-  }
+    .input-group span {
+        display: none;
+    }
 
-  .input-group span.derajat {
-      display: block;
-      font-size: 12px;
-  }
+    .input-group span.derajat {
+        display: block;
+        font-size: 12px;
+    }
 
-  .input-group input {
-      font-size: 12px;
-  }
+    .input-group input {
+        font-size: 12px;
+        padding: 0.3rem 0.2rem;
+    }
 
-  .card {
-    font-family: "Quantico","Fjalla One", sans-serif;     
-    font-size: 14px;   
-  }
+    .btn-group button {
+        font-size: 12px;
+        padding: 0.375rem 0.55rem;
+    }
 
-  .footer, nav {
-    font-family: "Quantico", "Fjalla One", sans-serif;        
-  }
+    .card {
+        font-family: "Quantico","Fjalla One", sans-serif;     
+        font-size: 13px;   
+    }
 
-  @media (min-width: 768px) { 
-  .card {
-    font-size: 18px;   
-  }
+    .footer, nav {
+        font-family: "Quantico", "Fjalla One", sans-serif;        
+    }
 
-  .input-group input {
-      font-size: 18px;
-  }
+    @media (min-width: 576px) { 
+        .navbar-light .navbar-nav .nav-link {
+            font-size: 14px;
+        }
 
-  .input-group span {
-      display: block;
-  }
+        .btn-logout-m{
+            display: none;     
+        }
+        
+        .btn-logout-w{
+            display: block;     
+        }
+        .card {
+            font-size: 18px;   
+        }
 
-  .input-group span.derajat {          
-      font-size: 18px;
-  }
+        .input-group input {
+            font-size: 18px;
+        }
 
-  .btn-group button {
-        font-size: 18px;
-        padding: 0.375rem 0.75rem
-    } 
+        .input-group span {
+            display: block;
+        }
 
-  .card button.status-on-off {
-    font-size: 18px;
-  }
+        .input-group span.derajat {          
+            font-size: 18px;
+        }
 
-  button {
-    font-size: 18px;
-  }
- }
+        .btn-group button {
+            font-size: 18px;
+            padding: 0.375rem 0.75rem
+        } 
+
+        .card button.status-on-off {
+            font-size: 18px;
+        }
+
+        button {
+            font-size: 18px;
+        }
+    }
+
+    @media (min-width: 640px) {
+        .navbar-light .navbar-nav .nav-link {
+            font-size: 18px;
+        }
+    }
 </style>
 
 <title>Hidroponik Smart System - PT. LGAP</title>
@@ -1001,49 +1029,47 @@ function cek_tbl_on($status)
                         </div>                        
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <div class="col-lg-6">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="4" class="tema-warna-b">TOWER SEMAI</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>                                        
-                                            <th>#</th>								  		
-                                            <th>Saklar</th>
-                                            <th>Status</th>
-                                        </tr>  
-                                        <tr>
-                                            <th scope="row">Lampu Semai</th>
-                                            <td>
-                                                <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button name="alat7off" type="submit" class="<?=cek_tbl_off($arrStatus[3]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                    <button name="alat7on" type="submit" class="<?=cek_tbl_on($arrStatus[3]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <input type="hidden" name="alat7id" value="<?=$arrStatus[3]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[3]['status']);?></button>	  
-                                            </td>                                    
-                                        </tr>                                      
-                                        <tr>
-                                            <th>Kipas Semai</th>
-                                            <td>
-                                                <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button name="alat8off" type="submit" class="<?=cek_tbl_off($arrStatus[7]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
-                                                    <button name="alat8on" type="submit" class="<?=cek_tbl_on($arrStatus[7]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		 
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <input type="hidden" name="alat8id" value="<?=$arrStatus[7]['id'];?>">
-                                                <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[7]['status']);?></button>		 
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="col-lg-6">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="4" class="tema-warna-b">TOWER SEMAI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>                                        
+                                        <th>#</th>								  		
+                                        <th>Saklar</th>
+                                        <th>Status</th>
+                                    </tr>  
+                                    <tr>
+                                        <th scope="row">Lampu Semai</th>
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button name="alat7off" type="submit" class="<?=cek_tbl_off($arrStatus[3]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                <button name="alat7on" type="submit" class="<?=cek_tbl_on($arrStatus[3]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input type="hidden" name="alat7id" value="<?=$arrStatus[3]['id'];?>">
+                                            <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[3]['status']);?></button>	  
+                                        </td>                                    
+                                    </tr>                                      
+                                    <tr>
+                                        <th>Kipas Semai</th>
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button name="alat8off" type="submit" class="<?=cek_tbl_off($arrStatus[7]['status']);?>"><i class="fa fa-times-circle-o" aria-hidden="true"></i>  Off</button>
+                                                <button name="alat8on" type="submit" class="<?=cek_tbl_on($arrStatus[7]['status']);?>">On  <i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>		 
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input type="hidden" name="alat8id" value="<?=$arrStatus[7]['id'];?>">
+                                            <button type="button" class="status-on-off btn btn-warning tema-warna-a"><?=cek_status($arrStatus[7]['status']);?></button>		 
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
