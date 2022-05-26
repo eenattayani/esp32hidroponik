@@ -51,6 +51,10 @@
           <a class="nav-link" href="kontrol-3.php"><i class="<?=$iconIII;?>" aria-hidden="true"></i> Lantai 3</a>        
         </div>
       </div>
+      <form class="form-inline my-2 my-lg-0">        
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="button"><i class="fa fa-building-o" aria-hidden="true"></i> Logout</button> -->
+        <a class="nav-link btn btn-outline-success" style="color: #44403c;" href="login.php"><i class="bi bi-box-arrow-left"></i> Logout</a>
+      </form>
     </nav>
 
 <!-- akhir navbar -->

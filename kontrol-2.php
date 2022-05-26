@@ -1,7 +1,17 @@
 <?php
+	error_reporting(0);
+
 	include 'session.php';
 
-	// error_reporting(0);
+    $lantaiKe = "2";
+
+    if (!isset($_SESSION["login"])) {
+        // echo "<script>alert('silahkan login!');</script>";
+
+        header("Location:login.php?lt=$lantaiKe");
+        exit;
+    }
+
 
 	// buat koneksi ke database
 	require_once 'dbconn.php';

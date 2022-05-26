@@ -1,6 +1,19 @@
 <?php
 	include 'session.php';
 
+    // user harus login untuk masuk halaman kontrol
+    // jika belum login, maka diarahkan ke halaman login
+    $lantaiKe = "1";
+
+    if (!isset($_SESSION["login"])) {
+        // echo "<script>alert('silahkan login!');</script>";
+
+        header("Location:login.php?lt=$lantaiKe");
+        exit;
+    }
+
+
+
 	// error_reporting(0);
 
 	// buat koneksi ke database
@@ -679,9 +692,9 @@
       }
 
       .btn-group button {
-        font-size: 10px;
-        padding: 0.375rem 0.55rem
-    }  
+            font-size: 10px;
+            padding: 0.375rem 0.55rem
+        }  
       
       .card button.status-on-off {
         font-size: 13px;
@@ -731,9 +744,9 @@
       }
 
       .btn-group button {
-        font-size: 18px;
-        padding: 0.375rem 0.75rem
-    } 
+            font-size: 18px;
+            padding: 0.375rem 0.75rem
+        } 
 
       .card button.status-on-off {
         font-size: 18px;
