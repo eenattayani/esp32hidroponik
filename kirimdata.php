@@ -1,7 +1,8 @@
 <?php 
 	include 'session.php';
 
-	$_SESSION['status'] = "terhubung";
+	$_SESSION['status2a'] = "terhubung";
+	$_SESSION['count2a'] = 0;
 
 	// buat koneksi ke database
 	require_once 'dbconn.php';
@@ -33,7 +34,7 @@
 		} else{
 		    echo"mode:monitoring";
 		    echo ":";
-		    echo "status:" . $_SESSION['status'];
+		    echo "status:" . $_SESSION['status2a'];
 
 		}
 

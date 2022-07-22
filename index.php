@@ -2,7 +2,7 @@
   error_reporting(0);
   include 'session.php';
 
-  $js = 'js/script-0.0.1.js';
+  $js = 'js/script-0.0.2.js';
 
   // redirect 
   //   header("location: login.php", true, 301);
@@ -273,25 +273,25 @@
                                 <tr>
                                     <td scope="row">3</td>
                                     <td class="text-left">Lantai 2 - device A</td>
-                                    <td class="id-lt2a"><?= $idLtDuaA; ?></td>
-                                    <td class="data-lt2a"><?= $dataLtDuaA; ?></td>
-                                    <td class="status-lt2a font-italic font-weight-bold"><?= $status; ?></td>
+                                    <td id="id-lt2a"><?= $idLtDuaA; ?></td>
+                                    <td id="data-lt2a"><?= $dataLtDuaA; ?></td>
+                                    <td id="status-lt2a" class="font-italic font-weight-bold"><?= $status; ?></td>
                                     <td><a class="style-link-tabel" href="<?= $urlLantaiDua; ?>"><i class="bi bi-tools"></i></a></td>
                                 </tr>                                                        
                                 <tr>
                                     <td scope="row">4</td>
                                     <td class="text-left">Lantai 2 - device B</td>
-                                    <td class="id-lt2b"><?= $idLtDuaB; ?></td>
-                                    <td class="data-lt2b"><?= $dataLtDuaB; ?></td>
-                                    <td class="status-lt2b font-italic font-weight-bold"><?= $status; ?></td>
+                                    <td id="id-lt2b"><?= $idLtDuaB; ?></td>
+                                    <td id="data-lt2b"><?= $dataLtDuaB; ?></td>
+                                    <td id="status-lt2b" class="font-italic font-weight-bold"><?= $status; ?></td>
                                     <td><a class="style-link-tabel" href="<?= $urlLantaiDua; ?>"><i class="bi bi-tools"></i></a></td>
                                 </tr> 
                                 <tr>
                                     <td scope="row">5</td>
                                     <td class="text-left">Lantai 3 - device A</td>
-                                    <td class="id-lt3a"><?= $idLtTigaA; ?></td>
-                                    <td class="data-lt3a"><?= $dataLtTigaA; ?></td>
-                                    <td class="status-lt3a font-italic font-weight-bold"><?= $status; ?></td>
+                                    <td id="id-lt3a"><?= $idLtTigaA; ?></td>
+                                    <td id="data-lt3a"><?= $dataLtTigaA; ?></td>
+                                    <td id="status-lt3a" class="font-italic font-weight-bold"><?= $status; ?></td>
                                     <td><a class="style-link-tabel" href="<?= $urlLantaiTiga; ?>"><i class="bi bi-tools"></i></a></td>
                                 </tr>                                                        
                             </tbody>
