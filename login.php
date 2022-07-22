@@ -163,7 +163,7 @@
      }
     </style>
 
-    <title>Traffic Light Monitoring | Provinsi Kalimantan Barat</title>
+    <title>Hidroponik Smart System - PT. LGAP</title>
   </head>
   <body class="tema-warna-b">
     <!-- NAVBAR -->

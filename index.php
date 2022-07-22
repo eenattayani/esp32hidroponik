@@ -1,9 +1,18 @@
 <?php 
   error_reporting(0);
+  include 'session.php';
+
+  $js = 'js/script-0.0.1.js';
 
   // redirect 
   //   header("location: login.php", true, 301);
   //   exit();
+
+    $idLtSatuA = "--- --- ---";
+    $idLtSatuB = "--- --- ---";
+    $idLtDuaA = "--- --- ---";
+    $idLtDuaB = "--- --- ---";
+    $idLtTigaA = "--- --- ---";
 
     $dataLtSatuA = "--- --- ---";
     $dataLtSatuB = "--- --- ---";
@@ -16,6 +25,20 @@
     $urlLantaiTiga = "kontrol-3.php";
 
     $status = "loading...";
+    // $status1A = "loading...1A";
+    // $status1B = "loading...1B";
+    
+    // if (isset($_SESSION['idESPA'])) {
+    //     $dataLtSatuA = $_SESSION['idESPA']; 
+    //     $status1A = "connected";      
+    // }
+
+    // if (isset($_SESSION['idESPB'])) {
+    //     $dataLtSatuB = $_SESSION['idESPB']; 
+    //     $status1B = "connected";      
+    // }
+
+    
 
 
 ?>
@@ -44,7 +67,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quantico&family=ZCOOL+QingKe+HuangYou&family=Fjalla+One&family=Squada+One&family=Teko&display=swap" rel="stylesheet" />
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
 
     <style type="text/css">  
 
@@ -193,7 +216,7 @@
      }
     </style>
 
-    <title>Traffic Light Monitoring | Provinsi Kalimantan Barat</title>
+    <title>Hidroponik Smart System - PT. LGAP</title>
   </head>
   <body class="tema-warna-b">
     <!-- NAVBAR -->
@@ -224,6 +247,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Device</th>
+                                    <th scope="col">ID</th>
                                     <th scope="col">Data</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Kontrol</th>
@@ -233,20 +257,23 @@
                                 <tr>
                                     <td scope="row">1</td>
                                     <td class="text-left">Lantai 1 - device A</td>
-                                    <td class="data-lt1a"><?= $dataLtSatuA; ?></td>
-                                    <td class="status-lt1a font-italic font-weight-bold"><?= $status; ?></td>
+                                    <td id="id-lt1a"><?= $idLtSatuA; ?></td>
+                                    <td id="data-lt1a"><?= $dataLtSatuA; ?></td>
+                                    <td id="status-lt1a" class="font-italic font-weight-bold"><?= $status; ?></td>
                                     <td><a class="style-link-tabel" style="" href="<?= $urlLantaiSatu; ?>"><i class="bi bi-tools"></i></a></td>
                                 </tr>                                                        
                                 <tr>
                                     <td scope="row">2</td>
                                     <td class="text-left">Lantai 1 - device B</td>
-                                    <td class="data-lt1b"><?= $dataLtSatuB; ?></td>
-                                    <td class="status-lt1b font-italic font-weight-bold"><?= $status; ?></td>
+                                    <td id="id-lt1b"><?= $idLtSatuB; ?></td>
+                                    <td id="data-lt1b"><?= $dataLtSatuB; ?></td>
+                                    <td id="status-lt1b" class="font-italic font-weight-bold"><?= $status; ?></td>
                                     <td><a class="style-link-tabel" href="<?= $urlLantaiSatu; ?>"><i class="bi bi-tools"></i></a></td>
                                 </tr>                                                        
                                 <tr>
                                     <td scope="row">3</td>
                                     <td class="text-left">Lantai 2 - device A</td>
+                                    <td class="id-lt2a"><?= $idLtDuaA; ?></td>
                                     <td class="data-lt2a"><?= $dataLtDuaA; ?></td>
                                     <td class="status-lt2a font-italic font-weight-bold"><?= $status; ?></td>
                                     <td><a class="style-link-tabel" href="<?= $urlLantaiDua; ?>"><i class="bi bi-tools"></i></a></td>
@@ -254,6 +281,7 @@
                                 <tr>
                                     <td scope="row">4</td>
                                     <td class="text-left">Lantai 2 - device B</td>
+                                    <td class="id-lt2b"><?= $idLtDuaB; ?></td>
                                     <td class="data-lt2b"><?= $dataLtDuaB; ?></td>
                                     <td class="status-lt2b font-italic font-weight-bold"><?= $status; ?></td>
                                     <td><a class="style-link-tabel" href="<?= $urlLantaiDua; ?>"><i class="bi bi-tools"></i></a></td>
@@ -261,6 +289,7 @@
                                 <tr>
                                     <td scope="row">5</td>
                                     <td class="text-left">Lantai 3 - device A</td>
+                                    <td class="id-lt3a"><?= $idLtTigaA; ?></td>
                                     <td class="data-lt3a"><?= $dataLtTigaA; ?></td>
                                     <td class="status-lt3a font-italic font-weight-bold"><?= $status; ?></td>
                                     <td><a class="style-link-tabel" href="<?= $urlLantaiTiga; ?>"><i class="bi bi-tools"></i></a></td>
@@ -306,19 +335,14 @@
       gsap.from(".footer p", { duration: 1.5, opacity: 0 });
     </script>
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
-
-    <script>
-      const userInput = document.querySelector("#user-input");      
-      setTimeout(() => {        
-        userInput.focus();
-      }, 500);
-    </script>
+    
+    <script src="<?= $js; ?>"></script>
   </body>
 </html>
 
