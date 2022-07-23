@@ -3,6 +3,8 @@
 
 	$_SESSION['status2a'] = "terhubung";
 	$_SESSION['count2a'] = 0;
+	$_SESSION['status2b'] = "terhubung";
+	$_SESSION['count2b'] = 0;
 
 	// buat koneksi ke database
 	require_once 'dbconn.php';
