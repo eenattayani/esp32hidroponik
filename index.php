@@ -2,7 +2,7 @@
   error_reporting(0);
   include 'session.php';
 
-  $js = 'js/script-0.0.3.js';
+  $js = 'js/script-0.0.4.js';
 
   // redirect 
   //   header("location: login.php", true, 301);

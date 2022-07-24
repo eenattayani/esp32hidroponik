@@ -70,7 +70,30 @@
                 echo "status:terhubung";                
     
             }
-        } 
+        } elseif ($idEsp === "ESPE") { 
+            $_SESSION['idESPE'] = $idEsp;        
+            $_SESSION['status3a'] = "terhubung";
+            $_SESSION['count3a'] = 0;            
+            $_SESSION['dataAlat3a'] = $dataEsp;    
+            
+            // jika ada perintah kontrol unutk ESPE
+            if (isset($_SESSION['kontrol3a'])) {
+                echo "id:" . $idEsp;
+                echo ":mode:kontrol:";
+                echo $_SESSION['kodealat3a'] . ":";
+                echo $_SESSION['kontrol3a'];
+   
+                unset($_SESSION['kodealat3a']);
+                unset($_SESSION['kontrol3a']);
+            } else{
+                echo "id:" . $idEsp;
+                echo ":";
+                echo"mode:monitoring";
+                echo ":";
+                echo "status:terhubung";                
+    
+            }
+        }
     }
 
 	// simpan ke tabel tb_sensor
