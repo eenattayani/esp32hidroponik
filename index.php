@@ -70,6 +70,38 @@
     <!-- <link rel="stylesheet" href="css/style.css" /> -->
 
     <style type="text/css">  
+        :root {
+            --gradient1: linear-gradient(102.4deg, rgba(253, 189, 85, 1) 7.8%, rgba(249, 131, 255, 1) 100.3%);
+            --gradient2: linear-gradient(109.6deg, rgba(61, 245, 167, 1) 11.2%, rgba(9, 111, 224, 1) 91.1%);        
+            --gradient3: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);            
+            --gradient4: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+
+
+        }
+
+        body {
+            min-height: 100vh;            
+            /* background-color: #85FFBD; */
+            background-color: #FFDEE9;
+            background-image: var(--gradient3);
+            background-size: 300%;
+            animation: gradient-animation 5s infinite alternate;
+            /* display: flex; */
+            /* elemen di tengah secara horizontal */
+            /* justify-content: center;  */
+            /* elemen di tengah secara vertikal */
+            /* align-items: center;  */
+        }
+
+        @keyframes gradient-animation {
+            0% {
+            background-position: right;
+            }
+
+            100% {
+            background-position: left;
+            }
+        }
 
         #main table {
             font-size: 14px;    

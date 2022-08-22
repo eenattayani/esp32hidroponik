@@ -186,8 +186,8 @@
         $idalat = $_POST['alat7id'];
         $statusalat = 1;
 
-        $_SESSION['kodealat1a'] = "G";
-        $_SESSION['kontrol1a'] = $statusalat;
+        $_SESSION['kodealat1b'] = "G";
+        $_SESSION['kontrol1b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -199,8 +199,8 @@
         $idalat = $_POST['alat7id'];
         $statusalat = 0;
 
-        $_SESSION['kodealat1a'] = "G";
-        $_SESSION['kontrol1a'] = $statusalat;
+        $_SESSION['kodealat1b'] = "G";
+        $_SESSION['kontrol1b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -212,8 +212,8 @@
         $idalat = $_POST['alat8id'];
         $statusalat = 1;
 
-        $_SESSION['kodealat1a'] = "H";
-        $_SESSION['kontrol1a'] = $statusalat;
+        $_SESSION['kodealat1b'] = "H";
+        $_SESSION['kontrol1b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -225,8 +225,8 @@
         $idalat = $_POST['alat8id'];
         $statusalat = 0;
 
-        $_SESSION['kodealat1a'] = "H";
-        $_SESSION['kontrol1a'] = $statusalat;
+        $_SESSION['kodealat1b'] = "H";
+        $_SESSION['kontrol1b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -437,8 +437,8 @@
 		$hourend = $_POST["sc3JamE"];
 		$minend = $_POST["sc3MenitE"];
 
-		$_SESSION['kodealat1a'] = "c";    
-		$_SESSION['kontrol1a'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+		$_SESSION['kodealat1b'] = "c";    
+		$_SESSION['kontrol1b'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
 		$simpan = mysqli_query($konek, 
 			"update $tbSetTimer
@@ -530,8 +530,8 @@
 
 		$acsuhu = $_POST["acSuhuB"];
 
-        $_SESSION['kodealat1a'] = "i";    
-		$_SESSION['kontrol1a'] = $acsuhu;
+        $_SESSION['kodealat1b'] = "i";    
+		$_SESSION['kontrol1b'] = $acsuhu;
 
 		$simpan = mysqli_query($konek, 
 			"update $tbSetTimer
@@ -547,8 +547,8 @@
 		$hourend = $_POST["sc7JamE"];
 		$minend = $_POST["sc7MenitE"];
 
-        $_SESSION['kodealat1a'] = "j";    
-		$_SESSION['kontrol1a'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['kodealat1b'] = "j";    
+		$_SESSION['kontrol1b'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
 		$simpan = mysqli_query($konek, 
 			"update $tbSetTimer
