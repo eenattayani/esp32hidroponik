@@ -26,9 +26,9 @@
     if (isset($_POST["alat1on"])) {
         $idalat = $_POST['alat1id'];
         $statusalat = 1;
-
-        $_SESSION['modeesp'] = "A";
-        $_SESSION['dataesp'] = $statusalat;
+        
+        $_SESSION['kodealat2a'] = "A";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -40,8 +40,8 @@
         $idalat = $_POST['alat1id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "A";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "A";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -53,8 +53,8 @@
         $idalat = $_POST['alat2id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "B";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "B";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -66,8 +66,8 @@
         $idalat = $_POST['alat2id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "B";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "B";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -79,8 +79,8 @@
         $idalat = $_POST['alat3id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "C";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "C";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -92,8 +92,8 @@
         $idalat = $_POST['alat3id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "C";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "C";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -105,8 +105,8 @@
         $idalat = $_POST['alat4id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "D";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "D";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -118,8 +118,8 @@
         $idalat = $_POST['alat4id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "D";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "D";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -131,8 +131,8 @@
         $idalat = $_POST['alat5id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "E";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "E";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -144,8 +144,8 @@
         $idalat = $_POST['alat5id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "E";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "E";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -157,8 +157,8 @@
         $idalat = $_POST['alat6id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "F";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "F";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -170,8 +170,8 @@
         $idalat = $_POST['alat6id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "F";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2a'] = "F";
+        $_SESSION['kontrol2a'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -183,8 +183,8 @@
         $idalat = $_POST['alat7id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "G";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "G";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -196,8 +196,8 @@
         $idalat = $_POST['alat7id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "G";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "G";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -209,8 +209,8 @@
         $idalat = $_POST['alat8id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "H";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "H";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -222,8 +222,8 @@
         $idalat = $_POST['alat8id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "H";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "H";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -235,8 +235,8 @@
         $idalat = $_POST['alat9id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "I";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "I";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -248,8 +248,8 @@
         $idalat = $_POST['alat9id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "I";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "I";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -261,8 +261,8 @@
         $idalat = $_POST['alat10id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "J";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "J";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -274,8 +274,8 @@
         $idalat = $_POST['alat10id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "J";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "J";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -287,8 +287,8 @@
         $idalat = $_POST['alat11id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "K";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "K";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -300,8 +300,8 @@
         $idalat = $_POST['alat11id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "K";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "K";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -313,8 +313,8 @@
         $idalat = $_POST['alat12id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "L";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "L";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -326,8 +326,8 @@
         $idalat = $_POST['alat12id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "L";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "L";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -339,8 +339,8 @@
         $idalat = $_POST['alat13id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "M";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "M";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -352,8 +352,8 @@
         $idalat = $_POST['alat13id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "M";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "M";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -365,8 +365,8 @@
         $idalat = $_POST['alat14id'];
         $statusalat = 1;
 
-        $_SESSION['modeesp'] = "N";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "N";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -378,8 +378,8 @@
         $idalat = $_POST['alat14id'];
         $statusalat = 0;
 
-        $_SESSION['modeesp'] = "N";
-        $_SESSION['dataesp'] = $statusalat;
+        $_SESSION['kodealat2b'] = "N";
+        $_SESSION['kontrol2b'] = $statusalat;
 
         $simpan = mysqli_query($konek,
         "update $tbKontrolManual 
@@ -400,8 +400,8 @@
         $hourend = $_POST["sc1JamE"];
         $minend = $_POST["sc1MenitE"];
 
-        $_SESSION['modeesp'] = "a";
-        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['kodealat2a'] = "a";    
+		$_SESSION['kontrol2a'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer
@@ -417,8 +417,8 @@
         $hourend = $_POST["sc2JamE"];
         $minend = $_POST["sc2MenitE"];
 
-        $_SESSION['modeesp'] = "b";
-        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['kodealat2a'] = "b";    
+		$_SESSION['kontrol2a'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer
@@ -434,8 +434,8 @@
         $hourend = $_POST["sc3JamE"];
         $minend = $_POST["sc3MenitE"];
 
-        $_SESSION['modeesp'] = "c";
-        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['kodealat2b'] = "c";    
+		$_SESSION['kontrol2b'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer
@@ -451,8 +451,8 @@
         $hourend = $_POST["sc4JamE"];
         $minend = $_POST["sc4MenitE"];
 
-        $_SESSION['modeesp'] = "d";
-        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['kodealat2a'] = "d";    
+		$_SESSION['kontrol2a'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer
@@ -465,8 +465,8 @@
 
         $acsuhu = $_POST["acSuhu"];
 
-        $_SESSION['modeesp'] = "e";
-        $_SESSION['dataesp'] = $acsuhu;
+        $_SESSION['kodealat2a'] = "e";
+        $_SESSION['kontrol2a'] = $acsuhu;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer
@@ -479,8 +479,8 @@
 
         $intervalmenit = $_POST["intervalMenit"];
 
-        $_SESSION['modeesp'] = "f";
-        $_SESSION['dataesp'] = $intervalmenit;
+        $_SESSION['kodealat2a'] = "f";
+        $_SESSION['kontrol2a'] = $intervalmenit;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer
@@ -496,8 +496,8 @@
         $hourend = $_POST["sc5JamE"];
         $minend = $_POST["sc5MenitE"];
 
-        $_SESSION['modeesp'] = "g";
-        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['kodealat2b'] = "g";    
+		$_SESSION['kontrol2b'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer
@@ -513,8 +513,8 @@
         $hourend = $_POST["sc6JamE"];
         $minend = $_POST["sc6MenitE"];
 
-        $_SESSION['modeesp'] = "h";
-        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['kodealat2b'] = "h";    
+		$_SESSION['kontrol2b'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer
@@ -527,8 +527,8 @@
 
         $acsuhu = $_POST["acSuhuB"];
 
-        $_SESSION['modeesp'] = "i";
-        $_SESSION['dataesp'] = $acsuhu;
+        $_SESSION['kodealat2b'] = "i";
+        $_SESSION['kontrol2b'] = $acsuhu;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer
@@ -544,8 +544,8 @@
         $hourend = $_POST["sc7JamE"];
         $minend = $_POST["sc7MenitE"];
 
-        $_SESSION['modeesp'] = "j";
-        $_SESSION['dataesp'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
+        $_SESSION['kodealat2b'] = "j";    
+		$_SESSION['kontrol2b'] = $hourstart . ":" . $minstart . ":". $hourend . ":" . $minend;
 
         $simpan = mysqli_query($konek, 
             "update $tbSetTimer

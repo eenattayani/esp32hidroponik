@@ -70,6 +70,52 @@
                 echo "status:terhubung";                
     
             }
+        } elseif ($idEsp === "ESPC") { 
+            $_SESSION['idESPC'] = $idEsp;        
+            $_SESSION['status2a'] = "terhubung";
+            $_SESSION['count2a'] = 0;            
+            $_SESSION['dataAlat2a'] = $dataEsp;    
+            
+            // jika ada perintah kontrol untuk ESPC
+            if (isset($_SESSION['kontrol2a'])) {
+                echo "id:" . $idEsp;
+                echo ":mode:kontrol:";
+                echo $_SESSION['kodealat2a'] . ":";
+                echo $_SESSION['kontrol2a'];
+   
+                unset($_SESSION['kodealat2a']);
+                unset($_SESSION['kontrol2a']);
+            } else{
+                echo "id:" . $idEsp;
+                echo ":";
+                echo"mode:monitoring";
+                echo ":";
+                echo "status:terhubung";                
+    
+            }
+        } elseif ($idEsp === "ESPD") { 
+            $_SESSION['idESPD'] = $idEsp;        
+            $_SESSION['status2b'] = "terhubung";
+            $_SESSION['count2b'] = 0;            
+            $_SESSION['dataAlat2b'] = $dataEsp;    
+            
+            // jika ada perintah kontrol untuk ESPD
+            if (isset($_SESSION['kontrol2b'])) {
+                echo "id:" . $idEsp;
+                echo ":mode:kontrol:";
+                echo $_SESSION['kodealat2b'] . ":";
+                echo $_SESSION['kontrol2b'];
+   
+                unset($_SESSION['kodealat2b']);
+                unset($_SESSION['kontrol2b']);
+            } else{
+                echo "id:" . $idEsp;
+                echo ":";
+                echo"mode:monitoring";
+                echo ":";
+                echo "status:terhubung";                
+    
+            }
         } elseif ($idEsp === "ESPE") { 
             $_SESSION['idESPE'] = $idEsp;        
             $_SESSION['status3a'] = "terhubung";
