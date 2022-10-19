@@ -157,10 +157,16 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-light fixed-top tema-warna-a">
         <a class="navbar-brand mb-0 h1" href="index.php">
-            <img src="images/logo-teks-1.png" height="60" class="d-inline-block align-top" alt="logo">
-            <!-- <img src="images/logo-teks.png" alt="logo+teks"> -->        
-        </a>    
-    </nav>
+            <img src="images/logo-teks-1.png" height="60" class="d-inline-block align-top" alt="logo">            
+        </a>   
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">                                  
+            </div>
+        </div> 
+        <form class="form-inline my-2 my-lg-0 btn-logout-w">                    
+            <a class="nav-link btn btn-outline-success" style="color: #44403c;" href="login.php"><i class="bi bi-box-arrow-left"></i> Logout</a>
+        </form>
+    </nav>        
     <!-- Akhir NAVBAR -->
 
     <div class="container" style="text-align: center; margin-top: 100px;">            

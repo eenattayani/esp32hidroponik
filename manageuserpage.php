@@ -19,12 +19,10 @@
 
     /** hapus data user */
     if (isset($_POST["delete"])) {  
-        $userhapus = $_POST["delete"];
-        // echo "usernya: " . $_POST["delete"];
+        $userhapus = $_POST["delete"];        
         $sql = mysqli_query($konek, "DELETE from $tbUser where username='$userhapus'");
 
-        if (!$sql) {
-            echo "<br><br><br><br><br>";
+        if (!$sql) {            
             echo "Error: " . $sql . "<br>" . mysqli_error($konek);
         }
 
@@ -32,11 +30,25 @@
     }
     
   
-    /** awal baca database  timer**/
+    /** ambil data admin **/
+    $arrAdmin = array();
+    $sql = mysqli_query($konek, "select * from $tbUser where level='admin'");    
+    if (!$sql) {
+        echo "Error: " . $sql . "<br>" . mysqli_error($konek);
+    }
+  
+    foreach ($sql as $key => $value) {
+        $h['nomor'] = $key + 1;
+        $h['username'] = $value['username'];
+        $h['level'] = $value['level'];
+        $h['password'] = str_split($value['password'],strlen($value['password']) - 2)[0];
+  
+        array_push($arrAdmin, $h);
+    }
+
+
     $arrUser = array();
-  
-    $sql = mysqli_query($konek, "select * from $tbUser"); 
-  
+    $sql = mysqli_query($konek, "select * from $tbUser where level='karyawan'"); 
     if (!$sql) {
         echo "Error: " . $sql . "<br>" . mysqli_error($konek);
     }
@@ -77,10 +89,14 @@
     <!-- My CSS -->
     <!-- <link rel="stylesheet" href="css/style.css" /> -->
 
-    <style type="text/css">  
+    <style type="text/css">      
         table {
             font-family: "Quantico","Fjalla One", sans-serif;     
             font-size: 14px;   
+        }
+
+        .btn-logout-w{
+            display: block;     
         }
 
         .navbar-light .navbar-nav .nav-link {
@@ -199,10 +215,16 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm navbar-light fixed-top tema-warna-a">
         <a class="navbar-brand mb-0 h1" href="index.php">
-            <img src="images/logo-teks-1.png" height="60" class="d-inline-block align-top" alt="logo">
-            <!-- <img src="images/logo-teks.png" alt="logo+teks"> -->        
-        </a>    
-    </nav>
+            <img src="images/logo-teks-1.png" height="60" class="d-inline-block align-top" alt="logo">            
+        </a>   
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">                                  
+            </div>
+        </div> 
+        <form class="form-inline my-2 my-lg-0 btn-logout-w">                    
+            <a class="nav-link btn btn-outline-success" style="color: #44403c;" href="login.php"><i class="bi bi-box-arrow-left"></i> Logout</a>
+        </form>
+    </nav>    
     <!-- Akhir NAVBAR -->
 
     <div class="container" style="text-align: center; margin-top: 100px;">            
@@ -225,15 +247,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($arrUser as $key => $value) { ?>                              
+                        <?php
+                            $nomor = 1; 
+                            foreach ($arrAdmin as $key => $value) { 
+                        ?>                              
                             <tr>
-                                <td class="text-center"><?=$value['nomor'];?></td>
+                                <td class="text-center"><?=$nomor++;?></td>
                                 <td class="text-center"><?=$value['username'];?></td>
                                 <!-- <td><?=$value['password'];?></td> -->
                                 <td class="text-center"><?=$value['level'];?></td>
                                 <td class="text-center">                                    
                                         <a class="btn btn-warning btn-sm" href="editpage.php?username=<?=$value['username'];?>" role="button"><i class="bi bi-pencil-square"></i> Edit</a>                                                                                                      
-                                        <button type="submit" class="btn btn-secondary btn-sm" name="delete" value="<?=$value['username'];?>" disabled>Delete <i class="bi bi-trash"></i></button>                                                                                                                  
+                                        <!-- <button type="submit" class="btn btn-secondary btn-sm" name="delete" value="<?=$value['username'];?>" disabled>Delete <i class="bi bi-trash"></i></button>                                                                                                                   -->
+                                </td>
+                            </tr>
+                        <?php } ?>
+
+                        <?php foreach ($arrUser as $key => $value) { ?>                              
+                            <tr>
+                                <td class="text-center"><?=$nomor++;?></td>
+                                <td class="text-center"><?=$value['username'];?></td>
+                                <!-- <td><?=$value['password'];?></td> -->
+                                <td class="text-center"><?=$value['level'];?></td>
+                                <td class="text-center">                                    
+                                    <a class="btn btn-warning btn-sm" href="editpage.php?username=<?=$value['username'];?>" role="button"><i class="bi bi-pencil-square"></i> Edit</a>                                                                                                      
+                                    <button type="submit" class="btn btn-secondary btn-sm" name="delete" value="<?=$value['username'];?>" onclick="return confirm('yakin?');">Delete <i class="bi bi-trash"></i></button>                                                                                                                  
                                 </td>
                             </tr>
                         <?php } ?>
