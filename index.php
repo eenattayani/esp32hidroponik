@@ -2,6 +2,14 @@
   error_reporting(0);
   include 'session.php';
 
+   //**   logout **//
+  if (isset($_SESSION["login"])) {
+    unset($_SESSION["login"]);
+  }
+  if (isset($_SESSION["admin"])) {
+    unset($_SESSION["admin"]);
+  }
+
   $js = 'js/script-0.0.4.js';
 
   // redirect 

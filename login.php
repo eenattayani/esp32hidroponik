@@ -3,8 +3,46 @@
 
   include "session.php";
   
+  // buat koneksi ke database
+	require_once 'dbconn.php';
+
+  /** variabel start*/
+  $tbUser = "tb_user";  
+  /** variabel end*/
+
+  /** awal baca database  timer**/
+  $arrUser = array();
+
+  $sql = mysqli_query($konek, "select * from $tbUser"); 
+
+  if (!$sql) {
+      echo "Error: " . $sql . "<br>" . mysqli_error($konek);
+  }
+
+  foreach ($sql as $key => $value) {
+      $h['id'] = $value['id'];
+      $h['username'] = $value['username'];
+      $h['level'] = $value['level'];
+      $h['password'] = $value['password'];      
+
+      array_push($arrUser, $h);
+  }
+
+  // foreach ($arrUser as $key => $value) {
+  //   echo $value['username'];
+  // }
+
+  // echo $arrUser[0]['password'];
+  // $userOnDB = $arrUser[0]['username'];
+  // $passOnDB = $arrUser[0]['password'];
+
+  /** akhir baca database timer**/
+  
   if (isset($_SESSION["login"])) {
     unset($_SESSION["login"]);
+  }
+  if (isset($_SESSION["admin"])) {
+    unset($_SESSION["admin"]);
   }
   
     $lt = "1";
@@ -14,13 +52,29 @@
 
     if (isset($_POST["login"])) {
         $username = $_POST["userLogin"];
-        $password = $_POST["userPassword"];
+        $password = md5($_POST["userPassword"]);
 
-        if ($username == "hidroponik" && $password == "LGAP") {            
-            $_SESSION["login"] = true;
-            header("Location:kontrol-$lt.php");
-            exit;
+        foreach ($arrUser as $key => $value) {
+          if ($username == $value['username']) {
+            if ($password == $value['password']) {
+              if ($value['level'] == "admin") {
+                $_SESSION["login"] = true;
+                $_SESSION["admin"] = true;
+                header("Location:adminpage.php");
+                exit;
+              }
+              $_SESSION["login"] = true;
+              header("Location:kontrol-$lt.php");
+              exit;
+            }            
+          }
         }
+
+        // if ($username == $userOnDB && $password == $passOnDB) {            
+        //     $_SESSION["login"] = true;
+        //     header("Location:kontrol-$lt.php");
+        //     exit;
+        // }
 
         echo "<script>alert('user dan pasword tidak sesuai!');</script>";
     
@@ -53,7 +107,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quantico&family=ZCOOL+QingKe+HuangYou&family=Fjalla+One&family=Squada+One&family=Teko&display=swap" rel="stylesheet" />
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
 
     <style type="text/css">  
 
@@ -193,7 +247,22 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="userPassword" class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="userPassword" id="userPassword">
+                                        <div class="input-group">
+                                          <input type="password" class="form-control" name="userPassword" id="userPassword">
+                                          <div class="input-group-append">                        
+                                              <!-- kita pasang onclick untuk merubah icon buka/tutup mata setiap diklik  -->
+                                              <span id="passicon" onclick="changePass()" class="input-group-text">
+                      
+                                                  <!-- icon mata bawaan bootstrap  -->
+                                                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                                      <path fill-rule="evenodd"
+                                                          d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                                  </svg>
+                                              </span>
+                                          </div>
+                                        </div>
                                     </div>    
                                     <button type="submit" name="login" class="btn btn btn-warning tema-warna-c">Login</button>
                                 </form>
@@ -250,6 +319,38 @@
       setTimeout(() => {        
         userInput.focus();
       }, 500);
+
+      function changePass() {
+    
+        // membuat variabel berisi tipe input dari id='pass', id='pass' adalah form input password 
+        let inputPass = document.querySelector("#userPassword");
+        let tipeInputPass = document.querySelector("#userPassword").type;
+        let iconMata = document.querySelector("#passicon");    
+
+        //membuat if kondisi, jika tipe x adalah password maka jalankan perintah di bawahnya
+        if (tipeInputPass == "password") {            
+
+            //ubah form input password menjadi text
+            document.querySelector("#userPassword").type = "text";
+            
+            //ubah icon mata terbuka menjadi tertutup
+            iconMata.innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-slash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+                                                            <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829z"/>
+                                                            <path fill-rule="evenodd" d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
+                                                            </svg>`;
+        }
+        else {            
+            //ubah form input password menjadi text
+            document.querySelector("#userPassword").type = "password";
+
+            //ubah icon mata terbuka menjadi tertutup
+            iconMata.innerHTML = `<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                                            <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                                            </svg>`;
+        }
+    }
     </script>
   </body>
 </html>
